@@ -1,0 +1,93 @@
+:root{
+    --color-fill : #019AD6;
+    --color-empty : #9747FF;
+}
+.footer{
+    height: 20vh;
+    
+    background: #212121;
+    
+    .progressWrapper{
+        position: relative;
+        height: 5px;
+        background-color:#444;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        .progress{
+            position: relative;
+            height: 100%;
+            background: linear-gradient(to right,var(--color-fill), var(--color-empty));
+            border-radius: 5px;
+            transition: width 0.3s ease;
+            
+            &:hover{
+                border: 0.1px solid white;
+            }
+
+
+            .progressThumb{
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 50%;
+                right: -6px;
+                top: 50%;
+                
+                transform: translateY(-50%);
+                
+                
+                
+
+                &:hover{
+                    background: var(--color-fill);
+                    border: 4px solid white;
+                    
+                }
+            }
+        }
+
+
+    }
+    .infos{
+        display: flex;
+        padding: 0px 23px;
+        height: 120px;
+        align-items: center;
+        .albumArt{
+            height: 70px;
+            width: 70px;
+            margin-right: 30px;
+            border-radius: 50%;
+            
+        }
+        .details{
+            width: 300px;
+            padding-right: 80px;
+            // height: 100px;
+
+            .title{
+                font-size: 30px;
+            }
+        }
+        .icon{
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+    .controls{
+        
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .controlBtn{
+            background: #212121;
+            cursor: pointer;
+            font-size: 44px;
+            padding: 10px 10px;
+            
+            transition: 0.5s;
+        }
+    }
+}

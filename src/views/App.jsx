@@ -1,19 +1,12 @@
-import './App.scss'
-import Logo from './Sidebar/Logo'
-
+import "./App.scss";
+import Home from "../pages/Home/Home";
 
 function App() {
-
   return (
     <>
-      <container id="container" className="container">
-        <div className='sidebar'>
-            <Logo/>
-        </div>
-        <div className='mainContent'></div>
-      </container>
+      <Home/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

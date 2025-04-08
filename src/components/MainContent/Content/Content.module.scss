@@ -1,0 +1,92 @@
+.songItem {
+    position: relative; // Để đặt các phần tử con bằng position: absolute
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #2a2a2a;
+    }
+
+    .cover {
+        width: 100%;
+        height: 700px;
+        border-radius: 5px;
+        
+        display: block; // Đảm bảo ảnh chiếm toàn bộ không gian
+
+        img{
+            object-fit: cover;
+        }
+    }
+
+    .songDetail {
+        position: absolute;
+        bottom: 200px; // Đặt ở góc trên
+        right: 150px; // Đặt ở bên phải
+        text-align: right; // Căn chữ sang phải
+
+        .title {
+            margin: 0;
+            font-size: 48px; // Tăng kích thước chữ để giống hình ảnh
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase; // Chữ in hoa giống hình ảnh
+        }
+
+        .artist {
+            margin: 5px 0 0;
+            font-size: 24px; // Tăng kích thước chữ
+            color: white; // Đổi màu thành trắng để giống hình ảnh
+            text-transform: uppercase;
+        }
+    }
+
+    .actions {
+        position: absolute;
+        bottom: 100px; // Đặt ở góc dưới
+        right: 150px; // Đặt ở bên phải
+        display: flex;
+        
+        gap: 1px;
+
+        .actionBtn {
+            background: none;
+            border: none;
+            color: #b3b3b3;
+            font-size: 25px; // Kích thước icon nhỏ
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .playBtn {
+            background: linear-gradient(to bottom, #069AD6, #9747FF);
+            border: none;
+            border-radius: 50px;
+            width: 150px; // Kích thước nút play nhỏ hơn
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: #1a1a1a;
+            font-size: 40px; // Kích thước icon
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #5a32a3;
+            }
+            
+            .titlePlay{
+                font-size: 32px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.item{
+    padding: 10px;
+    
+    .cover{
+        width: 450px;
+        height: 450px;
+        border-radius: 10px;
+    }
+    .title{
+        font-size: 30px;
+        font-weight: 800;
+
+    }
+    .artist{
+        font-size: 20px;
+    }
+}
