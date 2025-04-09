@@ -6,13 +6,10 @@ function Header(){
         <>
             <header id='header' className={clsx(styles.header)}>
                 <div className={clsx(styles.previous)}>
-                    <i class="fa-solid fa-circle-chevron-left"></i>
-                </div>
-                <div className={clsx(styles.searchBar)}>
-
+                    <i className="fa-solid fa-circle-chevron-left"></i>
                 </div>
                 <div className={clsx(styles.notification)}>
-                    <i class="fa-solid fa-bell"></i>
+                    <i className="fa-solid fa-bell"></i>
                 </div>
             </header>
         </>

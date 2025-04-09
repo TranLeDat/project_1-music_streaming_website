@@ -20,18 +20,24 @@
             &.active{
                 background: linear-gradient(#019AD6, #9747FF);
             }
-            span{
-                padding-left: 20px;
-                font-size: 30px;
-                
+            .link{
+                list-style: none;
+                i{
+                    font-size: 28px;  
+                    margin-right: 5px;  
+                    color: white;
+                }
+                span{
+                    color: white;
+                    padding-left: 20px;
+                    font-size: 30px;
+                }
             }
+            
         }
+        
 
-
-        i{
-            font-size: 28px;  
-            margin-right: 5px;  
-        }
+       
 
         
     }

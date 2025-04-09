@@ -6,64 +6,14 @@ import styles from './Home.module.scss'
 import React from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import PlayBox from "../../components/PlayBox/PlayBox";
-// import MainContent from "../../components/MainContent/MainContent";
+import Outstanding from "../../components/MainContent/OutStanding/Outstanding";
 import Header from "../../components/MainContent/Header/Header";
 import Content from "../../components/MainContent/Content/Content";
 import Latest from "../../components/MainContent/Latest/Latest"
-import img1 from '../../assets/img/Content/img1.jpg'
 
+import { songs, latests, artists } from "../../../src/data";
 
 function Home(){
-
-    const songs = [
-        {
-          title: "Vì Anh Đâu Có Biết",
-          artist: "Madihu",
-          albumArt: img1, // Thay bằng link hình ảnh thực tế
-          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        },
-        {
-          title: "Bài hát 2",
-          artist: "Nghệ sĩ 2",
-          albumArt: img1,
-          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-        },
-        {
-          title: "Bài hát 3",
-          artist: "Nghệ sĩ 3",
-          albumArt: img1,
-          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-        },
-      ];
-
-      const latests = [
-        {
-          songTitle: "Shape of You",
-          artist: "Ed Sheeran",
-          image: "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
-        },
-        {
-          songTitle: "Blinding Lights",
-          artist: "The Weeknd",
-          image: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452"
-        },
-        {
-          songTitle: "Bad Guy",
-          artist: "Billie Eilish",
-          image: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452"
-        },
-        {
-          songTitle: "Uptown Funk",
-          artist: "Mark Ronson ft. Bruno Mars",
-          image: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452"
-        },
-        {
-          songTitle: "Rolling in the Deep",
-          artist: "Adele",
-          image: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452"
-        }
-      ];
-
       const settings = {
         dots: true,
         infinite: true,
@@ -88,7 +38,7 @@ function Home(){
           }}></div>
         )
       };
-
+      
       
 
     return(
@@ -118,11 +68,22 @@ function Home(){
                       </div>
                     </div>
                     <div className={clsx(styles.latests)}>
-                      {latests.map((latest)=>(
-                        <Latest key={latest.songTitle} latest={latest} />
-                      ))}   
+                      <h2 className={clsx(styles.latestTitle)}>Mới phát hành</h2>
+                      <div className={clsx(styles.latest)}>
+                        {latests.map((latest)=>(
+                          <Latest key={latest.songTitle} latest={latest} />
+                        ))}  
+                      </div>
+                       
                     </div>
-
+                    <div className={clsx(styles.outStandings)}>
+                      <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
+                      <div className={clsx(styles.outStanding)}>
+                        {artists.map((artist, index) =>(
+                          <Outstanding key={index} artist={artist} />
+                        ))}
+                      </div>
+                    </div>   
                     
                 </div>
                

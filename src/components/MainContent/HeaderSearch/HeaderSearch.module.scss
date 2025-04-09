@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    align-items: center;
+                
+    .previous{
+        font-size: 40px;
+        margin-right: 20px;
+    }
+    .searchBars{
+        position: relative;
+        margin-right: 1500px;
+        padding: 15px;
+        
+        .searchBar{
+            width: 600px;
+            font-size: 40px;
+            padding-left: 50px;
+            border-radius: 10px;
+            background-color: #333;
+            
+        }
+        i{
+            position: absolute;
+            top: 25px;
+            left: 23px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+
+    .notification{
+        font-size: 40px;
+        margin-left: 40px;
+    }
+}

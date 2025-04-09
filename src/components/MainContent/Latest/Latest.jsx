@@ -5,7 +5,9 @@ function Latest({latest}){
     return(
         <>
             <div className={clsx(styles.item)}>
-                <img src={latest.image} alt='Song cover' className={clsx(styles.cover)} />
+                <div className={clsx(styles.coverWrapper)}>   
+                    <img src={latest.image} alt='Song cover' className={clsx(styles.cover)} />
+                </div>
                 <h3 className={clsx(styles.title)}>{latest.songTitle}</h3>
                 <p className={clsx(styles.artist)}>{latest.artist}</p>
             </div>

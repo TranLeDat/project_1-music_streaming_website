@@ -205,21 +205,21 @@ function PlayBox(){
                     </button>
 
                     <button className={clsx(styles.controlBtn)} onClick={handlePrev}>
-                        <i class="fa-solid fa-backward"></i>
+                        <i className="fa-solid fa-backward"></i>
                     </button>
 
                     <button className={clsx(styles.controlBtn, styles.playBtn)}
                         onClick={handlePlayPause}
                     >
-                        {isPlaying ? <i class="fa-regular fa-circle-play"></i> : <i class="fa-regular fa-circle-pause"></i>}
+                        {isPlaying ? <i className="fa-regular fa-circle-play"></i> : <i className="fa-regular fa-circle-pause"></i>}
                     </button>
                     <button className={clsx(styles.controlBtn)} onClick={handleNext} >
-                        <i class="fa-solid fa-forward"></i>
+                        <i className="fa-solid fa-forward"></i>
                     </button>
                     <button className={clsx(styles.controlBtn, {[styles.active] : isRepeated})}
                         onClick={handleRepeat}
                     >
-                        <i class="fa-solid fa-repeat"></i>
+                        <i className="fa-solid fa-repeat"></i>
                     </button>
                 </div>
             </footer>

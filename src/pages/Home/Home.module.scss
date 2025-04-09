@@ -1,11 +1,18 @@
+
 .container {
     // width: 100%;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 18vw 1fr;
+    // display: grid;
+    // grid-template-columns: 18vw 1fr;
+    display: flex;
     background: #000000;
+ 
 
     .main_left{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 18vw;
         .sidebar{
             flex : 1;
             overflow-y: auto;
@@ -17,10 +24,12 @@
         }
     }
 
-    .main_right{     
+    .main_right{   
+        width: 81vw;
         display: flex;
         flex-direction: column;
         overflow-y: auto;
+        margin-left: 18vw;
         .header{
             Header{
                 padding: 0 15px;
@@ -114,9 +123,28 @@
             }
         }
         .latests{
-            display: flex;
-            margin: 0 auto;
-            
+            .latestTitle{
+              font-size: 50px;
+              padding: 0 30px ;
+            }
+            .latest{
+              display: flex;
+              margin: 0 auto;
+              justify-content: center;
+            }
+        }
+        .outStandings{
+          margin-top: 30px;
+          .outStandingTitle{
+            font-size: 50px;
+            padding: 0 30px ;
+            color: #fff;
+          }
+          .outStanding{
+              display: flex;
+              margin: 0 auto;
+              justify-content: center;
+          }
         }
         
     }
