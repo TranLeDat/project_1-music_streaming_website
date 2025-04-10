@@ -31,23 +31,31 @@
         overflow-y: auto;
         margin-left: 18vw;
         .header{
-            margin: 30px;
-            padding: 0 15px;
-            height: 70px;
-            background: #000000;
-            border-radius: 50px;
-            display: flex; 
-            align-items: center;   
-        } 
-        .categories{
-            padding-left: 50px;
-            .categoryTitle{
-                font-weight: bold;
+            Header{
+                padding: 0 15px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #000000;
+                border-radius: 50px;
+                margin: 10px;
+                position: sticky;
+                top: 0;
+                z-index: 10;
             }
-            .category{
-                margin-left: 60px;
+    
+        }
+        .content{
+            height: 70vh;
+            .frame{
+                min-height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-        }  
+
+        }
     }
 }
 

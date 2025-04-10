@@ -1,11 +1,12 @@
 import React from "react";
 import clsx from 'clsx';
 import styles from './Toolbar.module.scss';
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Toolbar() {
   const [activeItem, setActiveItem] = useState();
+  const location = useLocation(); //lay duong dan hien tai
 
   const menuItem = [
     { id: 'Home', icon: "fa-solid fa-house", link: '/', text: 'Trang chủ' },
@@ -15,6 +16,13 @@ export default function Toolbar() {
     { id: 'Setting', icon: "fa-solid fa-gear", link: '/setting', text: 'Cài đặt' },
     { id: 'account', icon: "fa-solid fa-arrow-right-from-bracket", link: '/account', text: 'Đăng nhập' },
   ];
+
+  useEffect(()=>{
+    const currentItem = menuItem.find(item => item.link === location.pathname);
+    if(currentItem){
+      setActiveItem(currentItem.id);
+    }
+  })
 
   const handleSelected = (id) => {
     setActiveItem(id);

@@ -7,20 +7,21 @@ import Library from "../pages/Library/Library";
 import Favorites from "../pages/Favorites/Favorites";
 import Setting from "../pages/Setting/Setting";
 import Account from "../pages/User/Account";
+import { AuthProvider } from "../components/AuthContext/AuthContext";
 
 function App() {
   return (
     <>
+    <AuthProvider>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/search" element={<Search/>}/>
-        <Route path="/favorite" element={<Favorites/>}/>
-        <Route path="/library" element={<Library/>}/>
-        <Route path="/setting" element={<Setting/>}/>
-        <Route path="/account" element={<Account/>}/>
-      </Routes>
-      {/* <Home/> */}
-      {/* <Search/> */}
+          <Route path="/" element={<Home/>}/>
+          <Route path="/search" element={<Search/>}/>
+          <Route path="/favorite" element={<Favorites/>}/>
+          <Route path="/library" element={<Library/>}/>
+          <Route path="/setting" element={<Setting/>}/>
+          <Route path="/account" element={<Account/>}/>
+        </Routes>
+    </AuthProvider>
     </>
   );
 }

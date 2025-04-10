@@ -1,17 +1,17 @@
-import img1 from '../public/img/Content/img1.jpg'
-import img2 from '../public/img/Content/img2.jpg'
-import img3 from '../public/img/Content/img3.jpg'
-import img4 from '../public/img/Content/img4.jpg'
-import img5 from '../public/img/Content/img5.jpg'
+import img1 from './assets/img/Content/img1.jpg'
+import img2 from './assets/img/Content/img2.jpg'
+import img3 from './assets/img/Content/img3.jpg'
+import img4 from './assets/img/Content/img4.jpg'
+import img5 from './assets/img/Content/img5.jpg'
 
-import img1l from '../public/img/Latest/bad-guy.jpg'
-import img2l from '../public/img/Latest/Uptown-funk.jpg'
-import img3l from '../public/img/Latest/Rolling-in-the-deep.jpg'
-import img_out1 from '../public/img/outStanding/Mtp.webp'
-import img_out2 from '../public/img/outStanding/mt.jpg'
-import img_out3 from '../public/img/outStanding/dv.jpg'
-import img_out4 from '../public/img/outStanding/htl.jpg'
-import img_out5 from '../public/img/outStanding/npt.jpg'
+import img1l from './assets/img/Latest/bad-guy.jpg'
+import img2l from './assets/img/Latest/Uptown-funk.jpg'
+import img3l from './assets/img/Latest/Rolling-in-the-deep.jpg'
+import img_out1 from './assets/img/outStanding/Mtp.webp'
+import img_out2 from './assets/img/outStanding/mt.jpg'
+import img_out3 from './assets/img/outStanding/dv.jpg'
+import img_out4 from './assets/img/outStanding/htl.jpg'
+import img_out5 from './assets/img/outStanding/npt.jpg'
 
 import category1 from './assets/img/category/category1.png'
 import category2 from './assets/img/category/category2.png'
@@ -34,6 +34,23 @@ import category18 from './assets/img/category/category18.png'
 import category19 from './assets/img/category/category19.png'
 import category20 from './assets/img/category/category20.png'
 
+import favorite1 from './assets/img/Favorite/la-lung.jpg'
+import favorite2 from './assets/img/Favorite/Em_của_ngày_hôm_qua.png'
+import favorite3 from './assets/img/Favorite/lac_troi.jpg'
+import favorite4 from './assets/img/Favorite/Chay_ngay_di.png'
+import favorite5 from './assets/img/Favorite/co-trang-chai-viet-len-cay.jpg'
+import favorite6 from './assets/img/Favorite/hac-phan.jpg'
+
+import favorite7 from './assets/img/Favorite/chim-saujpg.jpg'
+import favorite8 from './assets/img/Favorite/sai-gon-mua.jpg'
+import favorite9 from './assets/img/Favorite/co-em.jpg'
+import favorite10 from './assets/img/Favorite/anh-sao-bau-troi.jpg'
+import favorite11 from './assets/img/Favorite/muon-roi-ma-sao-con.jpg'
+import favorite12 from './assets/img/Favorite/la-anh.jpg'
+import favorite13 from './assets/img/Favorite/con-mua-ngang-quajpg.jpg'
+import favorite14 from './assets/img/Favorite/thich-qua-rui-na.jpg'
+import favorite15 from './assets/img/Favorite/em-la.jpg'
+import favorite16 from './assets/img/Favorite/cu-chill-thoi.jpg'
 
 
 
@@ -148,4 +165,124 @@ export const categories = [
   { title: "Jazz", img: category18 },
   { title: "Folk & Acoustic", img: category19 },
   { title: "Soul", img: category20 }
+];
+
+
+export const listLiked = [
+  {
+    id: '0',
+    img: favorite1,
+    title: 'Lạ Lùng',
+    artist: 'Vũ',
+    time: '4:21'
+  },
+  {
+    id: '1',
+    img: favorite2,
+    title: 'Em Của Ngày Hôm Qua',
+    artist: 'Sơn Tùng M-TP',
+    time: '3:45'
+  },
+  {
+    id: '2',
+    img: favorite3,
+    title: 'Lạc Trôi',
+    artist: 'Sơn Tùng M-TP',
+    time: '4:17'
+  },
+  {
+    id: '3',
+    img: favorite4,
+    title: 'Chạy Ngay Đi',
+    artist: 'Sơn Tùng M-TP',
+    time: '4:26'
+  },
+  {
+    id: '4',
+    img: favorite5,
+    title: 'Có Chàng Trai Viết Lên Cây',
+    artist: 'Phan Mạnh Quỳnh',
+    time: '4:38'
+  },
+  {
+    id: '5',
+    img: favorite6,
+    title: 'Bạc Phận',
+    artist: 'Jack - J97',
+    time: '3:52'
+  }
+];
+
+
+export const favoriteList = [
+  {
+    id: '6',
+    img: favorite7,
+    title: 'Chìm Sâu',
+    artist: 'RPT MCK, Trung Trần',
+    time: '3:15',
+  },
+  {
+    id: '7',
+    img: favorite8,
+    title: 'Sài Gòn Hôm Nay Mưa',
+    artist: 'JSOL, Hoàng Duyên',
+    time: '4:12',
+  },
+  {
+    id: '8',
+    img: favorite9,
+    title: 'Có Em',
+    artist: 'Madihu, Low G',
+    time: '3:38',
+  },
+  {
+    id: '10',
+    img:favorite10,
+    title: 'Ánh Sao Và Bầu Trời',
+    artist: 'T.R.I',
+    time: '4:25',
+  },
+  {
+    id: '11',
+    img: favorite11,
+    title: 'Muộn Rồi Mà Sao Còn',
+    artist: 'Sơn Tùng M-TP',
+    time: '4:01',
+  },
+  {
+    id: '12',
+    img: favorite12,
+    title: 'Là Anh',
+    artist: 'Phạm Lịch, Bảo Kun',
+    time: '3:52',
+  },
+  {
+    id: '13',
+    img:favorite13,
+    title: 'Cơn Mưa Ngang Qua',
+    artist: 'Sơn Tùng M-TP',
+    time: '4:17',
+  },
+  {
+    id: '14',
+    img: favorite14,
+    title: 'Thích Quá Rùi Nà',
+    artist: 'Trúc Nhân, Trương Thảo Nhi',
+    time: '3:28',
+  },
+  {
+    id: '15',
+    img: favorite15,
+    title: 'Em Là',
+    artist: 'MONO, Onionn',
+    time: '4:33',
+  },
+  {
+    id: '16',
+    img: favorite16,
+    title: 'Cứ Chill Thôi',
+    artist: 'Chillies, Suni Hạ Linh',
+    time: '3:45',
+  }
 ];
