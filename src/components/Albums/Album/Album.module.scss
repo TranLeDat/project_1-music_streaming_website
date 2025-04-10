@@ -1,0 +1,45 @@
+.album{
+    cursor: pointer;
+    .listItem{
+        list-style: none;
+        display: flex;
+        width: 640px;
+        flex-wrap: wrap;
+        
+
+        li{
+            margin: 0;
+            height: 320px;
+            
+            .image{
+                width: 320px;
+                height: 320px;
+            }
+            .img1{
+                border-radius: 15px 0 0 0;
+            }
+            .img2{
+                border-radius: 0 15px 0 0;
+            }
+            .img3{
+                border-radius: 0 0 0 15px;
+            }
+            .img4{
+                border-radius: 0 0 15px 0;
+            }
+
+
+        }
+    }
+    .title{
+        font-size: 40px;
+        font-weight: 600;
+        margin: 0 40px;
+    }
+    .note{
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 40px;
+    }
+
+}

@@ -46,6 +46,18 @@
             }
     
         }
+        .albums{
+            margin: 0 70px;
+            .frameLogin{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 60px;
+                list-style: none;
+                
+                
+            }
+        }
+
         .content{
             height: 70vh;
             .frame{

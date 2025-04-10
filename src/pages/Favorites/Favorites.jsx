@@ -5,8 +5,9 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import PlayBox from '../../components/PlayBox/PlayBox';
 import Header from '../../components/MainContent/Header/Header';
 import FavoriteLogged from '../../components/Loggedin/FavoriteLogin/FavoriteLogged';
-import { listLiked, favoriteList } from '../../../src/data';
+import { listLiked, favoriteList, artists } from '../../../src/data';
 import { useAuth } from '../../components/AuthContext/AuthContext';
+import Outstanding from '../../components/MainContent/OutStanding/Outstanding';
 
 function Favorites(){
     const {isLoggedIn} = useAuth()
@@ -30,6 +31,14 @@ function Favorites(){
                             <div className={clsx(styles.frameLogin)}>
                                 <FavoriteLogged listLiked={listLiked} favoriteList={favoriteList} />
                             </div>
+                            <div className={clsx(styles.outStandings)}>
+                                <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
+                                <div className={clsx(styles.outStanding)}>
+                                    {artists.map((artist, index) =>(
+                                    <Outstanding key={index} artist={artist} />
+                                    ))}
+                                </div>
+                            </div>   
                         </div>
                         
                     :

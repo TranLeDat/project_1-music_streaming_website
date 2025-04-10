@@ -60,7 +60,21 @@
             .frameLogin{
                 padding: 23px;
             }
+            .outStandings{
+                margin-top: 30px;
+                .outStandingTitle{
+                  font-size: 50px;
+                  padding: 0 30px ;
+                  color: #fff;
+                }
+                .outStanding{
+                    display: flex;
+                    margin: 0 auto;
+                    justify-content: center;
+                }
+            }
         }
+        
     }
 }
 

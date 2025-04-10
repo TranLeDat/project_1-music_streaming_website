@@ -52,6 +52,24 @@ import favorite14 from './assets/img/Favorite/thich-qua-rui-na.jpg'
 import favorite15 from './assets/img/Favorite/em-la.jpg'
 import favorite16 from './assets/img/Favorite/cu-chill-thoi.jpg'
 
+import ablum1 from './assets/img/ablum/v-pop1.png'
+import ablum2 from './assets/img/ablum/v-pop2.png'
+import ablum3 from './assets/img/ablum/v-pop3.png'
+import ablum4 from './assets/img/ablum/v-pop4.png'
+import ablum5 from './assets/img/ablum/us-uk1.png'
+import ablum6 from './assets/img/ablum/us-uk2.png'
+import ablum7 from './assets/img/ablum/us-uk3.png'
+import ablum8 from './assets/img/ablum/us-uk4.png'
+import ablum9 from './assets/img/ablum/j-pop1.png'
+import ablum10 from './assets/img/ablum/j-pop2.png'
+import ablum11 from './assets/img/ablum/j-pop3.png'
+import ablum12 from './assets/img/ablum/j-pop4.png'
+import ablum13 from './assets/img/ablum/v-pop5.png'
+import ablum14 from './assets/img/ablum/v-pop6.png'
+import ablum15 from './assets/img/ablum/v-pop7.png'
+import ablum16 from './assets/img/ablum/v-pop8.png'
+
+
 
 
  export const songs = [
@@ -286,3 +304,41 @@ export const favoriteList = [
     time: '3:45',
   }
 ];
+
+
+
+export const albums = [
+  {
+    id : 1,
+    img1 : ablum1,
+    img2 : ablum2,
+    img3 : ablum3,
+    img4 : ablum4,
+    title : 'V-pop',
+  },
+  {
+    id : 2,
+    img1 : ablum5,
+    img2 : ablum6,
+    img3 : ablum7,
+    img4 : ablum8,
+    title : 'US-UK',
+  },
+  {
+    id : 3,
+    img1 : ablum9,
+    img2 : ablum10,
+    img3 : ablum11,
+    img4 : ablum12,
+    title : 'J-pop',
+  },
+  {
+    id : 4,
+    img1 : ablum13,
+    img2 : ablum14,
+    img3 : ablum15,
+    img4 : ablum16,
+    title : 'V-pop',
+  },
+];
+
