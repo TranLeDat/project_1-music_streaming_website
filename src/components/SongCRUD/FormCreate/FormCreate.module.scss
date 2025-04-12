@@ -1,0 +1,111 @@
+.formCreate{
+    .title{
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .content{
+        .form{
+            display: flex;
+            gap: 30px;
+            justify-items: center;
+            .content_left{
+                .inputAudio{
+                    margin: 30px;
+                    font-size: 30px;
+                }
+                .audioPreview{
+                    margin-left: 100px;
+                }
+                .inputThumbnail{
+                    margin: 30px;
+                }
+                .thumbnailPreview{
+                    max-width: 200px; 
+                    margin-top: 10px;
+                }
+                .info{
+                    margin: 30px;
+                }
+                .rdr{
+                    margin: 30px;
+                    width: 30px;
+                    height: 30px;
+                }
+                input{
+                    font-size: 30px;
+                }
+                label{
+                    font-size: 42px;
+                }
+                span{
+                    font-size: 30px;
+                }
+               
+            }
+            .content_right{
+                label{
+                    font-size: 42px;
+                    margin: 20px;
+                }
+                .inputName{
+                    font-size: 42px;
+                    width: 1500px;
+                    margin-bottom: 50px;
+                    border-radius: 15px;
+                    background: #424141;
+                }
+                .music{
+                    display: flex;
+                    gap: 90px;
+                    margin-bottom: 50px;
+                    .inputArtist{
+                        font-size: 42px;
+                        width: 700px;
+                        border-radius: 15px;
+                        background: #424141;
+                    }  
+                    .inputMusician{
+                        font-size: 42px;
+                        width: 700px;
+                        border-radius: 15px;
+                        background: #424141;
+                    } 
+                }
+                .desc{
+                    font-size: 42px;
+                    width:1500px ;
+                    height: 200px;
+                    margin-bottom: 50px;
+                    border-radius: 15px;
+                    background: #424141;
+                }
+                .button{
+                    display: flex;
+                    justify-content: center;
+                    gap: 50px;
+                    .btn{
+                        height: 80px;
+                        width: 400px;
+                        font-size: 30px;
+                        box-sizing: border-box;
+                        border-radius: 15px;
+                        transition: transform 0.5s ease, box-shadow 0.3s ease;
+                        &:hover{
+                            box-shadow: 0 0 15px #e6dbdb;
+                            transform: scale(1.05);
+                        }
+                    }
+                    .btnDelete{
+                        background: #000;
+                        border: 1px solid white;
+
+                    }
+                    .btnAdd{
+                        background: linear-gradient(to bottom, var(--color-start), var(--color-end));
+                    }
+                }
+                
+            }
+        }
+    }
+}

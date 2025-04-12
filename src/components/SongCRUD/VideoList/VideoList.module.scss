@@ -1,0 +1,63 @@
+.songlist{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    
+    
+    .icon{
+        width: 40px;
+        height: 40px;
+    }
+    .video{
+        width: 500px;
+        cursor: pointer;
+    }
+    .status{
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 170px;
+        width: 200px;
+    }
+    .date{
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 40px;
+        width: 200px;
+    }
+    .views{
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 50px;
+        width: 200px;
+    }
+    .comments{
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 30px;
+        width: 200px;
+    }
+    .time{
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 150px;
+    }
+    .remove{
+        font-size: 24px;
+        margin-left: 100px;
+        transition: box-shadow 0.3s ease, transform 0.5s ease;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #716f6f;
+        }
+    }
+
+
+}
+.hr{
+    height: 1px;
+    width: 100%;
+    background: #333;
+    margin: 20px 0 40px 0;
+}

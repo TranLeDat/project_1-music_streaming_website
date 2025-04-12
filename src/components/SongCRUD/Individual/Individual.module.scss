@@ -1,0 +1,80 @@
+:root{
+    --color-start : #069AD6;
+    --color-end : #9747FF;
+}
+.container{
+    .formShow{
+        margin-top: 100px;
+        .title{
+            font-size: 50px;
+            font-weight: 700;
+        }
+        .subjects{
+            display: flex;
+            gap: 100px;
+
+            .video{
+                font-size: 36px;
+                font-weight: 600;
+                margin-left: 100px;
+            }
+            .status{
+                margin-left: 500px;
+                font-size: 36px;
+                font-weight: 600;
+            }
+            .date{
+                margin-left: 50px;
+                font-size: 36px;
+                font-weight: 600;
+            }
+            .views{
+                margin-left: 30px;
+                font-size: 36px;
+                font-weight: 600;
+            }
+            .comments{
+                margin-left: 30px;
+                font-size: 36px;
+                font-weight: 600;
+            }
+            .time{
+                margin-left: 150px;
+                font-size: 36px;
+                font-weight: 600;
+            }
+        }
+        .videolist{
+            margin-bottom: 50px;
+        }
+        .formCreate{
+            
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+
+            .img{
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+            .btn{
+                color: white;
+                .btnAdd{
+                    margin-left: 20px;
+                    cursor: pointer;
+                    i{
+                        font-size: 42px;
+                    }
+                }
+            }
+            
+            .desc{
+                font-size: 42px;
+                margin: 0;
+            }
+        }
+
+    }
+}

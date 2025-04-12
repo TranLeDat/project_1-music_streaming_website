@@ -17,12 +17,21 @@ export default function Toolbar() {
     { id: 'account', icon: "fa-solid fa-arrow-right-from-bracket", link: '/account', text: 'Đăng nhập' },
   ];
 
-  useEffect(()=>{
-    const currentItem = menuItem.find(item => item.link === location.pathname);
-    if(currentItem){
+  useEffect(() => {
+    let currentItem;
+  
+    // Nếu đường dẫn là /foryou, ánh xạ với mục "Đăng nhập" (id: 'account')
+    if (location.pathname === '/foryou') {
+      currentItem = menuItem.find(item => item.id === 'account');
+    } else {
+      // Nếu không phải /foryou, tìm mục khớp với location.pathname như bình thường
+      currentItem = menuItem.find(item => item.link === location.pathname);
+    }
+  
+    if (currentItem) {
       setActiveItem(currentItem.id);
     }
-  })
+  }, [location.pathname]); 
 
   const handleSelected = (id) => {
     setActiveItem(id);

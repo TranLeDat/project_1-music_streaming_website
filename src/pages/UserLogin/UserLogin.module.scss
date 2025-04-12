@@ -1,0 +1,61 @@
+.frameWrapper{
+    position: relative;
+    .bg{
+        .imgBg{
+            box-sizing: border-box;
+            width: 2400px;
+            padding-left: 20px;
+        }
+    }
+    .infos{
+        display: flex;
+        gap: 50px;
+        position: absolute;
+        top: 400px;
+        left: 200px;
+        .avatar{
+            width: 400px;
+            border: 1px solid white;
+            border-radius: 50%;
+
+        }
+        .content{
+            .userName{
+                font-size: 56px;
+                font-weight: 700;
+                margin: 200px 0 20px 0;
+            }
+            .info{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                
+                cursor: pointer;
+
+                
+
+                .title{
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin: 0;
+                    a{
+                        color: #fff;
+                    }
+                    .active{
+                        color: #069AD6;
+                        transition: all 0.75s ease;
+                    }
+                }
+                .circle{
+                    width: 15px;
+                    height: 15px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                }
+
+            }
+        }
+    }
+}

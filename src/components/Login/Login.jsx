@@ -14,6 +14,7 @@ function Login(){
     const {login} = useAuth();
     // const {logout} = useAuth();
     const handleLogin = () =>{
+        alert('Đăng nhập thành công')
         login();
     }
 

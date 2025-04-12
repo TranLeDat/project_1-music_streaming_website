@@ -1,0 +1,21 @@
+.frame{
+    display: flex;
+    gap: 20px;
+    .thumbnail{
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+    }
+    .info{
+        .title{
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+        }
+        .artist{
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+}
