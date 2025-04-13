@@ -19,30 +19,32 @@
 
     .songDetail {
         position: absolute;
-        bottom: 200px; // Đặt ở góc trên
-        right: 150px; // Đặt ở bên phải
-        text-align: right; // Căn chữ sang phải
+        bottom: 200px; 
+        right: 150px; 
+        text-align: right; 
 
         .title {
             margin: 0;
-            font-size: 48px; // Tăng kích thước chữ để giống hình ảnh
+            font-size: 60px; 
             font-weight: 600;
             color: white;
-            text-transform: uppercase; // Chữ in hoa giống hình ảnh
+            text-transform: uppercase; 
         }
 
         .artist {
-            margin: 5px 0 0;
-            font-size: 24px; // Tăng kích thước chữ
-            color: white; // Đổi màu thành trắng để giống hình ảnh
+            margin: 5px 0 15px 0;
+            font-size: 28px; 
+            font-weight: 500;
+            opacity: 0.8;
+            color: white; 
             text-transform: uppercase;
         }
     }
 
     .actions {
         position: absolute;
-        bottom: 100px; // Đặt ở góc dưới
-        right: 150px; // Đặt ở bên phải
+        bottom: 100px; 
+        right: 150px; 
         display: flex;
         
         gap: 1px;
@@ -51,11 +53,22 @@
             background: none;
             border: none;
             color: #b3b3b3;
-            font-size: 25px; // Kích thước icon nhỏ
+            font-size: 32px; 
             cursor: pointer;
 
             &:hover {
                 color: white;
+            }
+        }
+        .actionHeart{
+            i {
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+    
+                &:hover {
+                  color: red;
+                }
             }
         }
 
@@ -63,22 +76,27 @@
             background: linear-gradient(to bottom, #069AD6, #9747FF);
             border: none;
             border-radius: 50px;
-            width: 150px; // Kích thước nút play nhỏ hơn
-            height: 60px;
+            width: 190px; 
+            height: 80px;
             display: flex;
             align-items: center;
+            justify-content: center;
             padding: 10px;
             color: #1a1a1a;
-            font-size: 40px; // Kích thước icon
+            font-size: 40px; 
+            box-sizing: border-box;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease transform 0.5s ease box-shadow 0.5s ease;
 
             &:hover {
                 background-color: #5a32a3;
+                transform: scale(1.02);
+                box-shadow: 0 0 15px #b5b1b1;
             }
             
             .titlePlay{
-                font-size: 32px;
+                font-size: 40px;
+                font-weight: 700;
                 margin-left: 10px;
                 margin-bottom: 10px;
             }

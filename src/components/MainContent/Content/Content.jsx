@@ -22,7 +22,7 @@ function Content({song}) {
                     <button className={clsx(styles.actionBtn)}>
                         <i className="fa-solid fa-plus"></i>
                     </button>
-                    <button className={clsx(styles.actionBtn)}>
+                    <button className={clsx(styles.actionBtn, styles.actionHeart)}>
                         <i className="fa-regular fa-heart"></i>
                     </button>
                     <button className={clsx(styles.playBtn)} >

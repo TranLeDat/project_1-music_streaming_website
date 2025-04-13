@@ -46,7 +46,7 @@ function PlayBox(){
         }
         audio.addEventListener('timeupdate', updateProgress);
         return ()=>{
-            audio.addEventListener('timeupdate', updateProgress);
+            audio.removeEventListener('timeupdate', updateProgress);
         }
       }, [isDragging])
     
@@ -77,15 +77,15 @@ function PlayBox(){
     }
 
     //Xu ly nguoi dung keo thanh tien trinh
-    const handleMouseMove =(e) =>{
-        if(!isDragging) return;
-
-        const progressBar = e.target.closest(`.${styles.progressWrapper}`);
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+    
+        const progressBar = progressRef.current; 
         const rect = progressBar.getBoundingClientRect();
         const offsetX = e.clientX - rect.left;
-        const newProgress = (offsetX /rect.width) *100;
+        const newProgress = (offsetX / rect.width) * 100;
         setProgress(Math.min(Math.max(newProgress, 0), 100));
-
+    
         const audio = audioRef.current;
         audio.currentTime = (newProgress / 100) * audio.duration;
     };
@@ -179,7 +179,7 @@ function PlayBox(){
             <footer id='footer' className={clsx(styles.footer)}>
                 <audio ref={audioRef} src={songs[currentSongIndex].src} />
                 <div className={clsx(styles.progressWrapper)} 
-                    onClick={handleMouseDown}
+                    onMouseDown={handleMouseDown}
                     ref={progressRef}
                     >
                     <div className={clsx(styles.progress)} style={{width : `${progress}%`}}>
@@ -211,7 +211,10 @@ function PlayBox(){
                     <button className={clsx(styles.controlBtn, styles.playBtn)}
                         onClick={handlePlayPause}
                     >
-                        {isPlaying ? <i className="fa-regular fa-circle-play"></i> : <i className="fa-regular fa-circle-pause"></i>}
+                        {isPlaying ? 
+                            <i className="fa-regular fa-circle-pause"></i> 
+                        : 
+                            <i className="fa-regular fa-circle-play"></i>}
                     </button>
                     <button className={clsx(styles.controlBtn)} onClick={handleNext} >
                         <i className="fa-solid fa-forward"></i>

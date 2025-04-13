@@ -13,13 +13,14 @@
         background-color:#444;
         border-radius: 5px;
         cursor: pointer;
+        margin-bottom: 5px;
         
         .progress{
             position: relative;
             height: 100%;
             background: linear-gradient(to right,var(--color-fill), var(--color-empty));
             border-radius: 5px;
-            transition: width 0.3s ease;
+            
             
             &:hover{
                 border: 0.1px solid white;
@@ -34,7 +35,7 @@
                 border-radius: 50%;
                 right: -6px;
                 top: 50%;
-                
+                transition: transform 0.75s ease;
                 transform: translateY(-50%);
                 
                 
@@ -68,7 +69,13 @@
             // height: 100px;
 
             .title{
-                font-size: 30px;
+                font-size: 36px;
+                margin: 10px 0;
+            }
+            .artist{
+                font-size: 24px;
+                opacity: 0.7;
+                margin: 0;
             }
         }
         .icon{

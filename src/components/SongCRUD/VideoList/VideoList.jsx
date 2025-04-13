@@ -3,11 +3,15 @@ import clsx from "clsx";
 import styles from './VideoList.module.scss'
 import completed from '../../../assets/img/user/check-circle.png'
 import VideoItem from "../VideoItem/VideoItem";
-// import { foryous } from "../../../foryou";
 
 
 
-function VideoList({song, videos}){
+
+function VideoList({song, videos, onRemove}){
+    
+    const handleRemove = ()=>{
+        onRemove(song.id);
+    }
     return(
         <>
             <div className={clsx(styles.songlist)}>
@@ -22,7 +26,7 @@ function VideoList({song, videos}){
                 <p className={clsx(styles.views)}>{song.views}</p>
                 <p className={clsx(styles.comments)}>{song.comments}</p>
                 <p className={clsx(styles.time)}>{song.duration}</p>
-                <p className={clsx(styles.remove)}><i className="fa-solid fa-trash"></i></p>
+                <p className={clsx(styles.remove)} onClick={handleRemove}><i className="fa-solid fa-trash"></i></p>
             </div>
             <div className={clsx(styles.hr)}></div>
         </>

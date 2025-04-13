@@ -4,10 +4,19 @@ import { foryous } from '../../../foryou';
 import VideoList from '../VideoList/VideoList';
 import upload from '../../../assets/img/login/upload.png';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 
 const subjects = ['Video', 'Trạng thái', 'Ngày', 'Lượt xem', 'Bình luận', 'Thời lượng'];
 
 function Individual() {
+    const [songlist, setSongList] = useState(foryous);
+
+    const handleRemoveSong = (songId)=>{
+        const updateSongList = songlist.filter((song) => song.id !== songId);
+        setSongList(updateSongList);
+    }
+
     return (
         <div className={clsx(styles.container)}>
             <div className={clsx(styles.formShow)}>
@@ -21,8 +30,13 @@ function Individual() {
                     <p className={clsx(styles.time)}>{subjects[5]}</p>
                 </div>
                 <div className={clsx(styles.videolist)}>
-                    {foryous.map((song) => (
-                        <VideoList key={song.id} song={song} videos={song.videos} />
+                    {songlist.map((song) => (
+                        <VideoList 
+                            key={song.id} 
+                            song={song} 
+                            videos={song.videos} 
+                            onRemove={handleRemoveSong}      
+                        />
                     ))}
                 </div>
                 <div>

@@ -1,5 +1,6 @@
 
 .container {
+   
     // width: 100%;
     min-height: 100vh;
     // display: grid;
@@ -25,6 +26,7 @@
     }
 
     .main_right{   
+        overflow-x: hidden;
         width: 81vw;
         display: flex;
         flex-direction: column;

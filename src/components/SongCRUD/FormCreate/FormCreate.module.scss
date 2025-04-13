@@ -1,4 +1,9 @@
+:root{
+    --color-start : #069AD6;
+    --color-end : #9747FF;
+}
 .formCreate{
+    
     .title{
         font-size: 50px;
         font-weight: 700;
@@ -6,49 +11,140 @@
     .content{
         .form{
             display: flex;
-            gap: 30px;
+            gap: 100px;
             justify-items: center;
             .content_left{
-                .inputAudio{
-                    margin: 30px;
-                    font-size: 30px;
+                margin-left: 50px;
+                .frameAudio{
+                    display: flex;
+                    align-items: center;
+                    .inputAudio{
+                        display: none;
+                        align-items: center;
+                    }
+                    .uploadArea{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 250px;
+                        height: 250px;
+                        background-color: #333;
+                        border: 1px solid #555;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        margin: 30px;
+                        transition:  transform 0.3s ease;
+    
+                        &:hover{
+                            background-color: #444;
+                        }
+    
+                        .uploadIcon{
+                            .img{
+                                width: 50px;
+                                height: 50px;
+                                
+                            }
+                        }
+                        .uploadText{
+                            color: #fff;
+                            font-size: 36px;
+                            text-align: center;
+                            margin: 0 auto;
+    
+                            span {
+                                display: block;
+                                font-size: 24px;
+                                color: #bbb; // Màu xám cho chữ phụ
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                    .audioPreview{
+                        max-width: 300px;
+                    }
                 }
-                .audioPreview{
-                    margin-left: 100px;
+                .frameThumbnail{
+                    display: flex;
+                    align-items: center;
+                    .inputThumbnail {
+                        display: none;
+                    }
+                    .uploadArea{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 250px;
+                        height: 250px;
+                        background-color: #333;
+                        border: 1px solid #555;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        margin: 30px;
+                        transition:  transform 0.3s ease;
+    
+                        &:hover{
+                            background-color: #444;
+                        }
+    
+                        .uploadIcon{
+                            .img{
+                                width: 50px;
+                                height: 50px;
+                                
+                            }
+                        }
+                        .uploadText{
+                            color: #fff;
+                            font-size: 36px;
+                            text-align: center;
+                            margin: 0 auto;
+    
+                            span {
+                                display: block;
+                                font-size: 24px;
+                                color: #bbb; // Màu xám cho chữ phụ
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                    .thumbnailPreview{
+                        max-width: 300px;
+                        width: 250px;
+                        height: 250px; 
+                        
+                    }
                 }
-                .inputThumbnail{
-                    margin: 30px;
-                }
-                .thumbnailPreview{
-                    max-width: 200px; 
-                    margin-top: 10px;
-                }
+                
                 .info{
                     margin: 30px;
-                }
-                .rdr{
-                    margin: 30px;
-                    width: 30px;
-                    height: 30px;
-                }
-                input{
-                    font-size: 30px;
-                }
-                label{
                     font-size: 42px;
                 }
-                span{
-                    font-size: 30px;
+                .radioItem{
+                    display: flex;
+                    align-items: center;
+                    .rdr{
+                        margin: 30px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                    span{
+                        font-size: 30px;
+                    }
                 }
+                
                
             }
             .content_right{
+                
                 label{
                     font-size: 42px;
                     margin: 20px;
                 }
                 .inputName{
-                    font-size: 42px;
+                    font-size: 50px;
                     width: 1500px;
                     margin-bottom: 50px;
                     border-radius: 15px;
@@ -59,20 +155,20 @@
                     gap: 90px;
                     margin-bottom: 50px;
                     .inputArtist{
-                        font-size: 42px;
+                        font-size: 50px;
                         width: 700px;
                         border-radius: 15px;
                         background: #424141;
                     }  
                     .inputMusician{
-                        font-size: 42px;
+                        font-size: 50px;
                         width: 700px;
                         border-radius: 15px;
                         background: #424141;
                     } 
                 }
                 .desc{
-                    font-size: 42px;
+                    font-size: 50px;
                     width:1500px ;
                     height: 200px;
                     margin-bottom: 50px;
@@ -101,7 +197,7 @@
 
                     }
                     .btnAdd{
-                        background: linear-gradient(to bottom, var(--color-start), var(--color-end));
+                        background: linear-gradient(to bottom, #069AD6, #9747FF);
                     }
                 }
                 
