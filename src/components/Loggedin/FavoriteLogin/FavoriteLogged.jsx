@@ -1,8 +1,7 @@
 
 import styles from './FavoriteLogged.module.scss'
 import clsx from 'clsx';
-import Disc from '../../Music/DIsc/Disc';
-import {Link, Routes, Route} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function FavoriteLogged({listLiked, favoriteList}){
     const renderSongList = (items)=>{

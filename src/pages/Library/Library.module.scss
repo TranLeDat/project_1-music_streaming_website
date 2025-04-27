@@ -3,13 +3,13 @@
     display: flex;
     flex-direction: column;
     .albums{
-        margin: 0 70px;
+        
         .frameLogin{
             display: flex;
             flex-wrap: wrap;
-            gap: 60px;
+            gap: 30px;
             list-style: none;
-            
+            padding: 0;
             .album{
                 .albumLink{
                     color: white;

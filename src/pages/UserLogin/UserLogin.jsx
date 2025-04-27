@@ -4,7 +4,7 @@ import styles from './UserLogin.module.scss'
 import { albums } from "../../data";
 import { favoriteList } from "../../data";
 import avatar from '../../assets/img/user/avatar.png'
-import background from '../../assets/img/user/bgc.avif'
+import background from '../../assets/img/user/Rectangle 87.png'
 import { useState } from "react";
 import {Routes, Route, Link} from 'react-router-dom'
 import Favorites from "../Favorites/Favorites";
@@ -57,11 +57,6 @@ function UserLogin(){
                     </div>
                 </div>
             </div>
-          <Routes>
-            <Route path='/library/*' element={<Library/>} />
-            <Route path='/favorite' element={<Favorites/>} />
-            <Route path='/foryou' element={<ForYou/>} />
-          </Routes>
         </>
     )
 }

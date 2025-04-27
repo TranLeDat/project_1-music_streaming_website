@@ -3,27 +3,29 @@
     .bg{
         .imgBg{
             box-sizing: border-box;
-            width: 2400px;
-            padding-left: 20px;
+            object-fit: cover;
+            width: 100%;
         }
     }
     .infos{
         display: flex;
         gap: 50px;
         position: absolute;
-        top: 400px;
-        left: 200px;
+        top: 150px;
+        left: 50px;
         .avatar{
-            width: 400px;
+            width: 200px;
+            height: 200px;
             border: 1px solid white;
             border-radius: 50%;
 
         }
         .content{
             .userName{
-                font-size: 56px;
+                font-size: 24px;
                 font-weight: 700;
-                margin: 200px 0 20px 0;
+                color: #fff;
+                margin: 120px 0 0 0;
             }
             .info{
                 display: flex;
@@ -31,13 +33,13 @@
                 align-items: center;
                 list-style: none;
                 padding: 0;
-                
+                margin: 0;
                 cursor: pointer;
 
                 
 
                 .title{
-                    font-size: 30px;
+                    font-size: 16px;
                     font-weight: 600;
                     margin: 0;
                     a{
@@ -49,8 +51,8 @@
                     }
                 }
                 .circle{
-                    width: 15px;
-                    height: 15px;
+                    width: 5px;
+                    height: 5px;
                     background-color: #fff;
                     border-radius: 50%;
                 }
