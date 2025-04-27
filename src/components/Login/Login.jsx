@@ -26,7 +26,7 @@ function Login(){
                     <li className={clsx(styles.item)} >
                         <button className={clsx(styles.btn, styles.btnGoogle)} onClick={handleLogin}>
                             <img src={google} alt='google' className={clsx(styles.icon)}/>
-                            <p className={clsx(styles.name)}>Đăng nhập với Google</p>
+                            <p className={clsx(styles.name, styles.named)}>Đăng nhập với Google</p>
                         </button>
                     </li>
                     <li className={clsx(styles.item)} >

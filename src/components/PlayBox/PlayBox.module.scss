@@ -2,14 +2,12 @@
     --color-fill : #019AD6;
     --color-empty : #9747FF;
 }
-.footer{
-    height: 20vh;
-    
+.playbox{
+    height: 25vh;
     background: #212121;
-    
     .progressWrapper{
         position: relative;
-        height: 5px;
+        height: 2px;
         background-color:#444;
         border-radius: 5px;
         cursor: pointer;
@@ -26,11 +24,10 @@
                 border: 0.1px solid white;
             }
 
-
             .progressThumb{
                 position: absolute;
-                width: 15px;
-                height: 15px;
+                width: 10px;
+                height: 10px;
                 background-color: white;
                 border-radius: 50%;
                 right: -6px;
@@ -38,12 +35,9 @@
                 transition: transform 0.75s ease;
                 transform: translateY(-50%);
                 
-                
-                
-
                 &:hover{
                     background: var(--color-fill);
-                    border: 4px solid white;
+                    border: 3px solid white;
                     
                 }
             }
@@ -54,46 +48,48 @@
     .infos{
         display: flex;
         padding: 0px 23px;
-        height: 120px;
         align-items: center;
+        margin-top: 20px;
+
         .albumArt{
-            height: 70px;
-            width: 70px;
-            margin-right: 30px;
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
             border-radius: 50%;
             
         }
         .details{
-            width: 300px;
-            padding-right: 80px;
-            // height: 100px;
+            margin-right: 50px;
 
             .title{
-                font-size: 36px;
-                margin: 10px 0;
+                font-size: 16px;
+                color: white;
+                margin: 5px 0;
             }
             .artist{
-                font-size: 24px;
+                font-size: 12px;
                 opacity: 0.7;
                 margin: 0;
+                color: white;
             }
         }
         .icon{
-            font-size: 24px;
+            font-size: 16px;
             cursor: pointer;
+            color: white;
         }
     }
     .controls{
-        
-        width: 100%;
+        margin-top: 15px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 25px;
         .controlBtn{
             background: #212121;
+            color: white;
             cursor: pointer;
-            font-size: 44px;
-            padding: 10px 10px;
-            
+            font-size: 30px;
+            padding: 0;
             transition: 0.5s;
         }
     }

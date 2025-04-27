@@ -14,42 +14,25 @@ function Account(){
     return(
         <>
             <div id="container" className={clsx(styles.container)}>
-                <div className={clsx(styles.main_left)}>
-                    <div className={clsx(styles.sidebar)}>
-                        <Sidebar />
-                    </div>
-                    <div className={clsx(styles.playBox)}>
-                        <PlayBox/>
-                    </div>
-                </div>
-                <div className={clsx(styles.main_right)}>
-                    <div className={clsx(styles.header)}>
-                        <Header/>
-                    </div>
-                    { isLoggedIn ? 
-                        <div className={clsx(styles.contentLogin)}>
-                            <div className={clsx(styles.infos)}>
-                                <UserLogin/>
-                            </div>
-                            <div className={clsx(styles.songs)}>
-                                <h2 className={clsx(styles.title)}>Đã nghe gần đây</h2>
-                                <div className={clsx(styles.song)}>
-                                    {listLiked.map((item) =>(
-                                        <Songs key={item.id} pop={item}/>
-                                    ))}
-                                </div>    
-                            </div>
+                { isLoggedIn ? 
+                    <div className={clsx(styles.contentLogin)}>
+                        <div className={clsx(styles.infos)}>
+                            <UserLogin/>
                         </div>
-                    :
-                        <div className={clsx(styles.content)}>
-                            <div className={clsx(styles.frame)}>
-                                <Login/>
-                            </div>
+                        <div className={clsx(styles.songs)}>
+                            <h2 className={clsx(styles.title)}>Đã nghe gần đây</h2>
+                            <div className={clsx(styles.song)}>
+                                {listLiked.map((item) =>(
+                                    <Songs key={item.id} pop={item}/>
+                                ))}
+                            </div>    
                         </div>
-                    }
-                    
-                   
-                </div>
+                    </div>
+                :
+                    <div className={clsx(styles.frame)}>
+                        <Login/>
+                    </div>
+                }          
             </div>
         </>
     )

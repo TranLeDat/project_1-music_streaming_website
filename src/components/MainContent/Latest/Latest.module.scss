@@ -3,7 +3,6 @@
     --color-end: #9747ff;
 }   
 .item{
-    padding: 10px;
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -17,12 +16,12 @@
     .coverWrapper{
         display: flex;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 10px;
+        padding: 1px;
         background: linear-gradient(90deg,var(--color-start), var(--color-end));
-        padding: 2px;
         .cover{
-            width: 450px;
-            height: 450px;
+            width: 200px;
+            height: 200px;
             border-radius: 10px;
             padding-bottom: 0;
             // border: 2px solid var(--color-end)
@@ -30,7 +29,7 @@
     }
        
     .title{
-        font-size: 30px;
+        font-size: 18px;
         font-weight: 800;
         color: white;
         margin: 0 5px 10px 0;
@@ -44,8 +43,8 @@
     }
     .artist{
         margin: 0;
-        font-size: 20px;
-        font-weight: 800;
+        font-size: 12px;
+        font-weight: 600;
         color: white;
 
         text-shadow: 

@@ -13,42 +13,26 @@ function Favorites(){
     const {isLoggedIn} = useAuth()
     return(
         <>
-            <div id="container" className={clsx(styles.container)}>
-                <div className={clsx(styles.main_left)}>
-                    <div className={clsx(styles.sidebar)}>
-                        <Sidebar />
-                    </div>
-                    <div className={clsx(styles.playBox)}>
-                        <PlayBox/>
-                    </div>
-                </div>
-                <div className={clsx(styles.main_right)}>
-                    <div className={clsx(styles.header)}>
-                        <Header/>
-                    </div>
-                    {isLoggedIn ? 
-                        <div className={clsx(styles.contentLogin)}>
-                            <div className={clsx(styles.frameLogin)}>
-                                <FavoriteLogged listLiked={listLiked} favoriteList={favoriteList} />
-                            </div>
-                            <div className={clsx(styles.outStandings)}>
-                                <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
-                                <div className={clsx(styles.outStanding)}>
-                                    {artists.map((artist, index) =>(
-                                    <Outstanding key={index} artist={artist} />
-                                    ))}
-                                </div>
-                            </div>   
+            <div className={clsx(styles.container)}>      
+                {isLoggedIn ? 
+                    <div className={clsx(styles.contentLogin)}>
+                        <div className={clsx(styles.frameLogin)}>
+                            <FavoriteLogged listLiked={listLiked} favoriteList={favoriteList} />
                         </div>
-                        
-                    :
-                        <div className={clsx(styles.content, styles.login)}>
-                            <div className={clsx(styles.frame, styles.login)}>
-                                <NotLogin/>
+                        <div className={clsx(styles.outStandings)}>
+                            <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
+                            <div className={clsx(styles.outStanding)}>
+                                {artists.map((artist, index) =>(
+                                <Outstanding key={index} artist={artist} />
+                                ))}
                             </div>
-                        </div>
-                    }
-                </div>
+                        </div>   
+                    </div>       
+                :
+                    <div className={clsx(styles.notLogin)}>
+                        <NotLogin/>
+                    </div>
+                }
             </div>
         </>
     )

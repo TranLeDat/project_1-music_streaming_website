@@ -10,14 +10,13 @@ function Content({song}) {
         <> 
             <div className={clsx(styles.songItem)}>
                 <img src={song.albumArt} alt="Song cover" className={clsx(styles.cover)} />
-                {/* Đặt songDetail và actions trực tiếp lên ảnh */}
                 <div className={clsx(styles.songDetail)}>
                     <h3 className={clsx(styles.title)}>{song.title}</h3>
                     <h3 className={clsx(styles.artist)}>{song.artist}</h3>
                 </div>
                 <div className={clsx(styles.actions)}>
                     <button className={clsx(styles.actionBtn)}>
-                        <i className="fa-solid fa-ellipsis-vertical"></i> {/* Thay ellipsis bằng info */}
+                        <i className="fa-solid fa-ellipsis-vertical"></i> 
                     </button>
                     <button className={clsx(styles.actionBtn)}>
                         <i className="fa-solid fa-plus"></i>

@@ -1,8 +1,8 @@
 
 .frame{
     border: 2px solid #fff;
-    height: 600px;
-    width: 1600px;
+    height: 300px;
+    width: 500px;
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
@@ -12,16 +12,21 @@
     background-color: #121212;
 
     .title{
-        width: 45%;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
+        font-size: 34px;
+        color: white;
+        padding: 20px;
+
     }
     .link{
         color: #fff;
         .btn{
-            width: 500px;
-            height: 100px;
-            font-size: 30px;
+            width: 300px;
+            height: 60px;
+            font-size: 24px;
+            font-weight: 700;
             border-radius: 50px;
+            color: white;
             background: linear-gradient(to bottom, #069AD6, #9747FF);
             transition: box-shadow 0.3 ease transform 0.75s ease;
             

@@ -27,19 +27,7 @@ function Library() {
     const location = useLocation();
     const isInSubRoute = location.pathname !== '/library';
     return (
-        <div id="container" className={clsx(styles.container)}>
-            <div className={clsx(styles.main_left)}>
-                <div className={clsx(styles.sidebar)}>
-                    <Sidebar />
-                </div>
-                <div className={clsx(styles.playBox)}>
-                    <PlayBox />
-                </div>
-            </div>
-            <div className={clsx(styles.main_right)}>
-                <div className={clsx(styles.header)}>
-                    <Header />
-                </div>
+            <div className={clsx(styles.container)}>
                 {isLoggedIn ? (
                     <div className={clsx(styles.albums)}>
                        {!isInSubRoute && (
@@ -69,14 +57,11 @@ function Library() {
                         <Outlet/>
                     </div>
                 ) : (
-                    <div className={clsx(styles.content)}>
-                        <div className={clsx(styles.frame)}>
-                            <NotLogin />
-                        </div>
+                    <div className={clsx(styles.notLogin)}>
+                        <NotLogin/>
                     </div>
                 )}
             </div>
-        </div>
     );
 }
 

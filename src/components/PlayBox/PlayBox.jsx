@@ -176,7 +176,7 @@ function PlayBox(){
 
     return(
         <>
-            <footer id='footer' className={clsx(styles.footer)}>
+            <footer className={clsx(styles.playbox)}>
                 <audio ref={audioRef} src={songs[currentSongIndex].src} />
                 <div className={clsx(styles.progressWrapper)} 
                     onMouseDown={handleMouseDown}

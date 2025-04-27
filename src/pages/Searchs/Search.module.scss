@@ -1,53 +1,16 @@
-
-.container {
-    // width: 100%;
-    min-height: 100vh;
-    // display: grid;
-    // grid-template-columns: 18vw 1fr;
-    display: flex;
-    background: #000000;
- 
-
-    .main_left{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 18vw;
-        .sidebar{
-            flex : 1;
-            overflow-y: auto;
-        }
-        .playBox{
-            width: 100%;
-            position: sticky;
-            border-bottom: 0;
-        }
+.categories{
+    
+    .categoryTitle{
+        font-weight: bold;
+        font-size: 36px;
+        color: white;
     }
-
-    .main_right{   
-        width: 81vw;
+    .category{
         display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        margin-left: 18vw;
-        .header{
-            margin: 30px;
-            padding: 0 15px;
-            height: 70px;
-            background: #000000;
-            border-radius: 50px;
-            display: flex; 
-            align-items: center;   
-        } 
-        .categories{
-            padding-left: 50px;
-            .categoryTitle{
-                font-weight: bold;
-            }
-            .category{
-                margin-left: 60px;
-            }
-        }  
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
-}
+}  
+
 

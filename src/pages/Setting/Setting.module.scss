@@ -1,52 +1,33 @@
-
 .container {
-    // width: 100%;
-    min-height: 100vh;
-    // display: grid;
-    // grid-template-columns: 18vw 1fr;
-    display: flex;
-    background: #000000;
- 
-
-    .main_left{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 18vw;
-        .sidebar{
-            flex : 1;
-            overflow-y: auto;
-        }
-        .playBox{
-            width: 100%;
-            position: sticky;
-            border-bottom: 0;
-        }
-    }
-
-    .main_right{   
-        width: 81vw;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        margin-left: 18vw;
-        .header{
-            Header{
-                padding: 0 15px;
-                height: 70px;
+    .setting{
+        .listItem{
+            list-style: none;
+            color: white;
+    
+            .item{
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                background: #000000;
-                border-radius: 50px;
-                margin: 10px;
-                position: sticky;
-                top: 0;
-                z-index: 10;
-            }
     
+                i{
+                    font-size: 28px;
+                    cursor: pointer;
+                }
+                .title{
+                    margin: 0;
+                    font-size: 22px;
+                    font-weight: 700;
+                    padding: 10px;
+                    margin-left: 20px;
+                    cursor: pointer;
+    
+                    span{
+                        font-weight: 700;
+                        opacity: 0.5;
+                        
+                    }
+                }   
+            }
         }
-        
     }
 }
 

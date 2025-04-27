@@ -1,33 +1,31 @@
 
 import clsx from "clsx";
 import styles from './Setting.module.scss'
-import Sidebar from "../../components/Sidebar/Sidebar";
-import PlayBox from "../../components/PlayBox/PlayBox";
-import Header from "../../components/MainContent/Header/Header";
-import Settings from "../../components/Setttings/Settings";
 
 
 function Setting(){
     return(
         <>
             <div id="container" className={clsx(styles.container)}>
-                <div className={clsx(styles.main_left)}>
-                    <div className={clsx(styles.sidebar)}>
-                        <Sidebar />
-                    </div>
-                    <div className={clsx(styles.playBox)}>
-                        <PlayBox/>
-                    </div>
-                </div>
-                <div className={clsx(styles.main_right)}>
-                    <div className={clsx(styles.header)}>
-                        <Header/>
-                    </div>
-                    <div className={clsx(styles.content)}>
-                        <div className={clsx(styles.frame)}>
-                            <Settings/>
-                        </div>
-                    </div>
+                <div className={clsx(styles.setting)}>
+                    <ul className={clsx(styles.listItem)}>
+                        <li className={clsx(styles.item)}>
+                            <i className="fa-solid fa-globe"></i>
+                            <h3 className={clsx(styles.title)}>Ngôn ngữ: <span>Tiếng việt</span> </h3>
+                        </li>
+                        <li className={clsx(styles.item)}>
+                            <i className="fa-solid fa-file"></i>
+                            <h3 className={clsx(styles.title)}>Giới thiệu</h3>
+                        </li>
+                        <li className={clsx(styles.item)}>
+                            <i className="fa-solid fa-shield"></i>
+                            <h3 className={clsx(styles.title)}>Chính sách bảo mật</h3>
+                        </li>
+                        <li className={clsx(styles.item)}>
+                            <i className="fa-solid fa-flag"></i>
+                            <h3 className={clsx(styles.title)}>Báo cáo</h3>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </>
