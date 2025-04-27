@@ -77,7 +77,7 @@ function Home(){
                        
                     </div>
                     <div className={clsx(styles.outStandings)}>
-                      <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
+                      <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bậ</h2>
                       <div className={clsx(styles.outStanding)}>
                         {artists.map((artist, index) =>(
                           <Outstanding key={index} artist={artist} />
