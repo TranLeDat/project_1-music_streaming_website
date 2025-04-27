@@ -1,9 +1,6 @@
 import styles from './Favorites.module.scss'
 import clsx from 'clsx';
 import NotLogin from '../../components/NotLogin/NotLogin';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import PlayBox from '../../components/PlayBox/PlayBox';
-import Header from '../../components/MainContent/Header/Header';
 import FavoriteLogged from '../../components/Loggedin/FavoriteLogin/FavoriteLogged';
 import { listLiked, favoriteList, artists } from '../../../src/data';
 import { useAuth } from '../../components/AuthContext/AuthContext';

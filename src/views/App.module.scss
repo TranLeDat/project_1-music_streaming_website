@@ -3,25 +3,36 @@
     --color-end : #9747FF;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    height: 100vh;
-
-    .left{
-        grid-column: span 3;
-    }
-    .right{
-        grid-column: span 12;
-        background-color:#000 ;
-        padding: 0 23px;
-        
-        .header{
-            height: 50px;
+body{
+    box-sizing: border-box;
+    .container{
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(15, 1fr);
+        height: 100vh;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    
+        .left{
+            grid-column: span 3;
         }
+        .right{
+            grid-column: span 12;
+            background-color:#000 ;
+            padding: 0 23px;
+            
+            .header{
+                height: 50px;
+            }
+            .main{
+                width: 100%;
+            }
+        }
+    
     }
 
 }
+
 
 
 

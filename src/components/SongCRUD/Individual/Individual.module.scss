@@ -5,44 +5,45 @@
 .container{
     
     .formShow{
-        
-        margin-top: 100px;
         .title{
-            font-size: 50px;
+            font-size: 36px;
             font-weight: 700;
+            margin: 0;
+            color: #fff;
         }
         .subjects{
             display: flex;
-            gap: 100px;
+            gap: 10px;
+            color: #fff;
 
             .video{
-                font-size: 36px;
+                font-size: 16px;
                 font-weight: 600;
-                margin-left: 100px;
+                margin-left: 30px;
             }
             .status{
-                margin-left: 500px;
-                font-size: 36px;
+                margin-left: 250px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .date{
-                margin-left: 50px;
-                font-size: 36px;
+                margin-left: 80px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .views{
-                margin-left: 30px;
-                font-size: 36px;
+                margin-left: 100px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .comments{
-                margin-left: 30px;
-                font-size: 36px;
+                margin-left: 50px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .time{
-                margin-left: 150px;
-                font-size: 36px;
+                margin-left: 120px;
+                font-size: 16px;
                 font-weight: 600;
             }
         }
@@ -53,28 +54,34 @@
             
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 10px;
 
 
             .img{
-                width: 40px;
-                height: 40px;
+                width: 20px;
+                height: 20px;
                 cursor: pointer;
             }
             .btn{
                 color: white;
                 .btnAdd{
                     margin-left: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     cursor: pointer;
+                    width: 30px;
+                    height: 30px;
                     i{
-                        font-size: 42px;
+                        font-size: 12px;
                     }
                 }
             }
             
             .desc{
-                font-size: 42px;
+                font-size: 18px;
                 margin: 0;
+                color: #fff;
             }
         }
 
