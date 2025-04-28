@@ -3,16 +3,16 @@ import styles from './Content.module.scss'
 import clsx from "clsx";
 
 
-function Content({song}) {
+function Content({content}) {
     
     
     return (
         <> 
             <div className={clsx(styles.songItem)}>
-                <img src={song.albumArt} alt="Song cover" className={clsx(styles.cover)} />
+                <img src={content.album?.cover_big} alt={content.title} className={clsx(styles.cover)} />
                 <div className={clsx(styles.songDetail)}>
-                    <h3 className={clsx(styles.title)}>{song.title}</h3>
-                    <h3 className={clsx(styles.artist)}>{song.artist}</h3>
+                    <h3 className={clsx(styles.title)}>{content.title}</h3>
+                    <h3 className={clsx(styles.artist)}>{content.artist?.name}</h3>
                 </div>
                 <div className={clsx(styles.actions)}>
                     <button className={clsx(styles.actionBtn)}>

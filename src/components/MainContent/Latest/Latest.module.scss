@@ -16,7 +16,9 @@
     .coverWrapper{
         display: flex;
         align-items: center;
+        justify-content: center;
         border-radius: 10px;
+        width: 201px;
         padding: 1px;
         background: linear-gradient(90deg,var(--color-start), var(--color-end));
         .cover{
@@ -25,6 +27,7 @@
             border-radius: 10px;
             padding-bottom: 0;
             object-fit: cover;
+            
             // border: 2px solid var(--color-end)
         }
     }
@@ -32,8 +35,11 @@
     .title{
         font-size: 18px;
         font-weight: 800;
+        width: 201px;
         color: white;
         margin: 0 5px 10px 0;
+        display: flex;
+        flex-wrap: wrap;
         
 
         text-shadow: 

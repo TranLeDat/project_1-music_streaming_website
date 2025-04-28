@@ -7,41 +7,28 @@ import React, { useEffect, useState } from "react";
 import Outstanding from "../../components/MainContent/OutStanding/Outstanding";
 import Content from "../../components/MainContent/Content/Content";
 import Latest from "../../components/MainContent/Latest/Latest"
-
-import { songs, artists } from "../../../src/data";
 import musicApi from "../../api/musicApi";
 
 function Home(){
 
-      
-      const [latests, setLatests] = useState([]);
-      const [outStandings, setOutStandings] = useState([]);
+  const [contents, setContents] = useState([]);
+  const [latests, setLatests] = useState([]);
+  const [outStandings, setOutStandings] = useState([]);
 
-      useEffect(()=>{
-        const fetchTracks = async() =>{
-          try {
-              const res = await musicApi.getTopTracks({ _limit: 5, _index: 0});
-              setLatests(res);
-              console.log('>>> check latest',res)
-          } catch (error) {
-            console.log('Failed to fetch track list', error)
-          }
-        };
-        fetchTracks();
-      }, [])
-      useEffect(()=>{
-        const fetchTracks = async() =>{
-          try {
-              const res = await musicApi.getTopTracks({ _limit: 5, _index: 10});
-              setOutStandings(res);
-              console.log('>>> check outStanding',res)
-          } catch (error) {
-            console.log('Failed to fetch track list', error)
-          }
-        };
-        fetchTracks();
-      }, [])
-
+  const fetchSectionTracks = async (_index, countryCode, setter) =>{
+    try {
+      const res = await musicApi.getTopTracks({_limit: 5, _index, countryCode });
+      setter(res)
+    } catch (error) {
+      console.log('Failed to fetch tracks', error)
+    }
+  }
+  
+  useEffect(()=>{
+    fetchSectionTracks(0, 'vn', setContents);
+    fetchSectionTracks(15, 'vn', setLatests);
+    fetchSectionTracks(10, 'vn', setOutStandings);
+  }, [])
 
       const settings = {
         dots: true,
@@ -74,9 +61,9 @@ function Home(){
           <div className={clsx(styles.contents)}>
               <div className={styles.sliderWrapper}> 
                 <Slider {...settings}>
-                  {songs.map((song, index) => (
-                    <div key={index} className={styles.slideItem}> 
-                      <Content song={song} />
+                  {contents.map((content) => (
+                    <div key={content.id} className={styles.slideItem}> 
+                      <Content content={content} />
                     </div>
                   ))}
                 </Slider>

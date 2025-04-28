@@ -5,6 +5,8 @@
 
 body{
     box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
     .container{
         width: 100vw;
         display: grid;
@@ -12,14 +14,14 @@ body{
         grid-template-columns: repeat(15, 1fr);
         height: 100vh;
         box-sizing: border-box;
-        overflow-x: hidden;
     
         .left{
             grid-column: span 3;
             position: fixed;
+            z-index: 1;
         }
         .right{
-            width: 100%;
+            width: 79vw;
             margin-left: 17vw;
             grid-column: span 12;
             background-color:#000 ;
