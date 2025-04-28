@@ -2,14 +2,14 @@ import styles from './Outstanding.module.scss'
 import clsx from 'clsx'
 
 
-function Outstanding({artist}){
+function Outstanding({outStanding}){
     return(
         <>
             <div className={clsx(styles.outStanding)}>
                 <div className={clsx(styles.wrapper)}>
-                    <img src={artist.img} alt="artist" className={clsx(styles.image)}/>
+                    <img src={outStanding.artist?.picture_small} alt={outStanding.artist.name} className={clsx(styles.image)}/>
                 </div>
-                <h3 className={clsx(styles.name)}>{artist.name}</h3>
+                <h3 className={clsx(styles.name)}>{outStanding.artist?.name}</h3>
             </div>
             
         </>

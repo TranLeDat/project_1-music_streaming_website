@@ -3,14 +3,46 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import clsx from "clsx";
 import styles from './Home.module.scss'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Outstanding from "../../components/MainContent/OutStanding/Outstanding";
 import Content from "../../components/MainContent/Content/Content";
 import Latest from "../../components/MainContent/Latest/Latest"
 
-import { songs, latests, artists } from "../../../src/data";
+import { songs, artists } from "../../../src/data";
+import musicApi from "../../api/musicApi";
 
 function Home(){
+
+      
+      const [latests, setLatests] = useState([]);
+      const [outStandings, setOutStandings] = useState([]);
+
+      useEffect(()=>{
+        const fetchTracks = async() =>{
+          try {
+              const res = await musicApi.getTopTracks({ _limit: 5, _index: 0});
+              setLatests(res);
+              console.log('>>> check latest',res)
+          } catch (error) {
+            console.log('Failed to fetch track list', error)
+          }
+        };
+        fetchTracks();
+      }, [])
+      useEffect(()=>{
+        const fetchTracks = async() =>{
+          try {
+              const res = await musicApi.getTopTracks({ _limit: 5, _index: 10});
+              setOutStandings(res);
+              console.log('>>> check outStanding',res)
+          } catch (error) {
+            console.log('Failed to fetch track list', error)
+          }
+        };
+        fetchTracks();
+      }, [])
+
+
       const settings = {
         dots: true,
         infinite: true,
@@ -53,16 +85,16 @@ function Home(){
           <div className={clsx(styles.latests)}>
             <h2 className={clsx(styles.latestTitle)}>Mới phát hành</h2>
               <div className={clsx(styles.latest)}>
-                {latests.map((latest)=>(
-                  <Latest key={latest.songTitle} latest={latest} />
-                ))}  
+              {Array.isArray(latests) && latests.map((latest) => (
+                <Latest key={latest.id} latest={latest} />
+              ))}
               </div>                
           </div>
           <div className={clsx(styles.outStandings)}>
             <h2 className={clsx(styles.outStandingTitle)}>Ca sĩ nổi bật</h2>
             <div className={clsx(styles.outStanding)}>
-              {artists.map((artist, index) =>(
-                <Outstanding key={index} artist={artist} />
+              {Array.isArray(outStandings) && outStandings.map((outStanding) => (
+                <Outstanding key={outStanding.id} outStanding={outStanding} />
               ))}
             </div>
           </div>   
