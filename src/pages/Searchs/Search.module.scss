@@ -1,15 +1,22 @@
 .categories{
-    
+    width: 70vw;
     .categoryTitle{
         font-weight: bold;
         font-size: 36px;
         color: white;
     }
+    .searchBars{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+            
+    }
     .category{
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        justify-content: center;
+
     }
 }  
 

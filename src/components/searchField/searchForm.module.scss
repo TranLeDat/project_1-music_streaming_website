@@ -1,0 +1,27 @@
+form{
+    margin-left: 80%;
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    gap: 20px;
+
+    .btn{
+        position: absolute;
+        top: 20px;
+        left: 190px;
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.0);
+
+        i{
+            
+            font-size: 24px;
+            color: white;
+            opacity: 0;
+            z-index: 10;
+            
+        }
+    }
+}
+

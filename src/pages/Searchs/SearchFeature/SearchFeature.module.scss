@@ -1,0 +1,42 @@
+.infos{
+    display: flex;
+    color: #fff;
+    margin-top: 40px;
+    width: 75vw;
+    .cover{
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .info{
+        width: 200px;
+        .title{
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px   ;
+            
+        }
+        .artist{
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.6;
+            margin: 10px;
+        }
+    }
+    .duration{
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.6;
+            margin-top: 50px;
+            
+            margin-left: 70%;
+            
+    }
+
+}
+.hr{
+    height: 1px;
+    width: 100%;
+    background: #333;
+}
