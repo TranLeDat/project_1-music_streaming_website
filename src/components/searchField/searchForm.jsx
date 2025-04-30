@@ -15,7 +15,7 @@ SearchForm.propTypes = {
 function SearchForm(props) {
 
   const schema = yup.object().shape({
-    search: yup.string().required('Please enter your word you want to search?').min(1,'Please enter at least 1 word'),
+    search: yup.string().required('Please enter your word you want to search?'),
   })
 
   const form = useForm({
@@ -42,8 +42,7 @@ function SearchForm(props) {
         <div className={clsx(styles.inputField)}>
           <InputField name='search' label={label} form={form}  />
         </div>
-        <button  className={clsx(styles.btn)}
-          onClick={handleSubmit}>
+        <button type="submit" className={clsx(styles.btn)}>
             <i  className="fa-solid fa-magnifying-glass" ></i>
         </button>
       </form>

@@ -1,22 +1,55 @@
+:root{
+    --color-start : #069AD6;
+    --color-end : #9747FF;
+}
 .categories{
-    width: 70vw;
     .categoryTitle{
         font-weight: bold;
         font-size: 36px;
         color: white;
     }
     .searchBars{
-        padding: 15px;
+        
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-bottom: 50px;
+        gap: 20px;
             
     }
     .category{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+        
+        .search{
+            .searchList{
+                .searchTitle{
+                    color: #fff;
+                    margin-top: 80px;
+                    font-size: 24px; 
+                }
+            }
+            .move{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                padding: 30px;
+                .btnMove{
+                    width: 120px;
+                    height: 50px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 700;
+                    background-color: #4e4b4b;
+                }
+            }
+        }
+       
 
+        .genre{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
     }
 }  
 

@@ -11,42 +11,26 @@ function SearchFeature({ result }) {
     const imageUrl = result.album?.cover_medium || result.picture_medium || result.picture || '';
     const title = result.title || result.name || result.genre || 'Unknown';
     const subTitle = result.artist?.name || '';
-    const dura = result.duration ;
-    const type = result.type;
+
     
+    const dura = result.duration || 0;
     const minute = Math.floor(dura / 60);
-    const second = dura % 60;
-    const duration = `${minute}:${second}`
-    
-    if (type === 'track' || type === 'artist') {
-        // Nếu là bài hát hoặc ca sĩ
-        return (
-            <div className={clsx(styles.frame)} >
-                <div className={clsx(styles.infos)}>
-                    <img src={imageUrl} alt={title} className={clsx(styles.cover)} />
-                    <div className={clsx(styles.info)}>
-                        <h3 className={clsx(styles.title)}>{title}</h3>
-                        <p className={clsx(styles.artist)}>{subTitle}</p>
-                    </div>
-                    <p className={clsx(styles.duration)}>{duration}</p>
+    const second = String(dura % 60).padStart(2, '0');
+    const duration = `${minute}:${second}`;
+
+    return (
+        <div className={clsx(styles.frame)} >
+            <div className={clsx(styles.infos)}>
+                <img src={imageUrl} alt={title} className={clsx(styles.cover)} />
+                <div className={clsx(styles.info)}>
+                    <h3 className={clsx(styles.title)}>{title}</h3>
+                    <p className={clsx(styles.artist)}>{subTitle}</p>
                 </div>
-                <div className={clsx(styles.hr)}></div>
+                <p className={clsx(styles.duration)}>{duration}</p>
             </div>
-        );
-    } else {
-        // Nếu là thể loại (genre hoặc khác)
-        return (
-        <div className={clsx(styles.infos)}>
-            <img src={imageUrl} alt={title} />
-            <div className={clsx(styles.info)}>
-            <h3 className={clsx(styles.title)}>{title}</h3>
-            <p className={clsx(styles.quantity)}>
-                {result.nb_tracks ? `${result.nb_tracks} tracks` : 'Unknown quantity'}
-            </p>
-            </div>
+            <div className={clsx(styles.hr)}></div>
         </div>
-        );
-    }
+    );
 }
 
 export default SearchFeature;

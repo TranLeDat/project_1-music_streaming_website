@@ -1,13 +1,12 @@
 import axiosClient from "./axiosClient";
 
 const searchApi = {
-    async getSearchByArtist({ query, _limit = 10 } = {}) {
+    async getSearchByArtist({ query, _limit = 10, _page = 1 } = {}) {
         try {
-            // Bước 1: Tìm nghệ sĩ
             const artistRes = await axiosClient.get('/search/artist', {
                 params: {
                 q: query,
-                limit: 5, // (limit 5 để chắc chắn lấy danh sách)
+                limit: 5,
                 },
             });
         
@@ -17,15 +16,15 @@ const searchApi = {
                 console.log('Không tìm thấy nghệ sĩ');
                 return [];
             }
-        
-            const firstArtist = artistList[0]; // ✅ Lấy nghệ sĩ đầu tiên
+            const firstArtist = artistList[0]; 
         
             console.log('Artist tìm thấy:', firstArtist);
+            const index = (_page - 1) * _limit;
         
-            // Bước 2: Lấy bài hát top của nghệ sĩ đó
             const trackRes = await axiosClient.get(`/artist/${firstArtist.id}/top`, {
                 params: {
                 limit: _limit,
+                index,
                 },
             });
         
@@ -38,19 +37,6 @@ const searchApi = {
         }
     },
       
-      
-      
-
-    async getSearchBySong({ query } = {}) {
-        const res = await axiosClient.get("/search/track", {
-        params: {
-            q: query,
-            limit: 1,
-        },
-        });
-        return res.data; // Trả về mảng bài hát
-    },
-    
-    };
+}
 
 export default searchApi;
