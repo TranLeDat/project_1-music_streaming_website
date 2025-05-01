@@ -12,16 +12,14 @@ import Disc from "../components/Music/DIsc/Disc";
 import { AuthProvider } from "../components/AuthContext/AuthContext";
 import FormCreate from "../components/SongCRUD/FormCreate/FormCreate";
 import Individual from "../components/SongCRUD/Individual/Individual";
-import ListVpop from "../components/Albums/ListSong/ListVpop/ListVpop";
-import ListUSUK from "../components/Albums/ListSong/ListUSUK/ListUSUK";
-import ListJpop from "../components/Albums/ListSong/ListJpop/ListJpop";
-import ListVpopc from "../components/Albums/ListSong/ListVpopc/ListVpopc";
+
 import Header from "../components/MainContent/Header/Header";
 
 import styles from './App.module.scss'
 import clsx from "clsx";
 import Sidebar from "../components/Sidebar/Sidebar";
 import PlayBox from "../components/PlayBox/PlayBox";
+import ListPop from '../components/Albums/ListSong/ListVpop/ListPop';
 
 function App() {
     return (
@@ -45,10 +43,8 @@ function App() {
                                 <Route path="/search" element={<Search />} />
                                 <Route path="/favorite" element={<Favorites />} />
                                 <Route path="/library" element={<Library />}>
-                                    <Route path="V-pop" element={<ListVpop />} />
-                                    <Route path="US-UK" element={<ListUSUK />} />
-                                    <Route path="J-pop" element={<ListJpop />} />
-                                    <Route path="V-popc" element={<ListVpopc />} />
+                                    <Route path="pop" element={<ListPop />} />
+                                    
                                 </Route>
                                 <Route path="/setting" element={<Setting />} />
                                 <Route path="/account/*" element={<Account />} />

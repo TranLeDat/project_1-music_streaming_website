@@ -32,13 +32,13 @@ function Search(){
             setCurrentPage(1)
             console.log('Artist search results:', res);
             setIsSearch(true);
-            setHasMove((res || []).length === limit)
+            setHasMove((res || []).length === limit);
         } catch (error) {
             console.log('Failed to fetch artist', error)
             setSearchResults([]);
             setIsSearch(true);
             setHasMove(false) 
-        setIsSearch(true);
+            setIsSearch(true);
         }
     }
 

@@ -1,66 +1,57 @@
 import styles from './Library.module.scss';
 import clsx from 'clsx';
-import Header from '../../components/MainContent/Header/Header';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import PlayBox from '../../components/PlayBox/PlayBox';
 import NotLogin from '../../components/NotLogin/NotLogin';
-import { albums } from '../../data';
 import Album from '../../components/Albums/Album/Album';
 import { useAuth } from '../../components/AuthContext/AuthContext';
-import {  Link, Outlet, useLocation } from 'react-router-dom';
+import {  Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import libraryApi from '../../api/libraryApi';
 
 
 function Library() {
-    const links = [
-        { link: 'V-pop' }, // Đường dẫn tương đối
-        { link: 'US-UK' },
-        { link: 'J-pop' },
-        { link: 'V-popc' },
-    ];
-
-    const album1 = albums[0];
-    const album2 = albums[1];
-    const album3 = albums[2];
-    const album4 = albums[3];
-
+    const [librarys, setLibrarys] = useState([]);
     const { isLoggedIn } = useAuth();
     const location = useLocation();
     const isInSubRoute = location.pathname !== '/library';
+
+    useEffect(()=>{
+        const fetchLibrary = async () =>{
+            try {
+                const res = await libraryApi.getLibrary();
+                console.log('>>> check api library: ', res);
+                setLibrarys(res);
+            } catch (error) {
+                console.log('Failed to fetch lib', error);
+            }
+        };
+        fetchLibrary()
+    },[])
+
+
+    
     return (
             <div className={clsx(styles.container)}>
                 {isLoggedIn ? (
                     <div className={clsx(styles.albums)}>
-                       {!isInSubRoute && (
-                            <ul className={clsx(styles.frameLogin)}>
-                                <li className={clsx(styles.album)}>
-                                    <Link to={links[0].link} className={clsx(styles.albumLink)}>
-                                        <Album album={album1} />
-                                    </Link>
-                                </li>
-                                <li className={clsx(styles.album)}>
-                                    <Link to={links[1].link} className={clsx(styles.albumLink)}>
-                                        <Album album={album2} />
-                                    </Link>
-                                </li>
-                                <li className={clsx(styles.album)}>
-                                    <Link to={links[2].link} className={clsx(styles.albumLink)}>
-                                        <Album album={album3} />
-                                    </Link>
-                                </li>
-                                <li className={clsx(styles.album)}>
-                                    <Link to={links[3].link} className={clsx(styles.albumLink)}>
-                                        <Album album={album4} />
-                                    </Link>
-                                </li>
-                            </ul>
+                        {!isInSubRoute ? (
+                        <ul className={clsx(styles.frameLogin)}>
+                            {librarys.map((library) => (
+                            <li key={library.id} className={clsx(styles.album)}>
+                                <Album library={library} />
+                            </li>
+                            ))}
+                        </ul>
+                        ) : (
+                        <Outlet />
                         )}
-                        <Outlet/>
                     </div>
-                ) : (
+                    ) : (
                     <div className={clsx(styles.notLogin)}>
-                        <NotLogin/>
+                        <NotLogin />
                     </div>
-                )}
+                    )
+                }
+
             </div>
     );
 }
