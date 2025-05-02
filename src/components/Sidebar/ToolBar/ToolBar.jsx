@@ -14,7 +14,7 @@ function Toolbar() {
         { id: 'Favorites', icon: "fa-regular fa-heart", link: '/favorite', text: 'Yêu thích' },
         { id: 'Library', icon: "fa-regular fa-folder", link: '/library', text: 'Thư viện' },
         { id: 'Setting', icon: "fa-solid fa-gear", link: '/setting', text: 'Cài đặt' },
-        { id: 'account', icon: "fa-solid fa-arrow-right-from-bracket", link: '/account', text: 'Đăng nhập' },
+        { id: 'account', icon: "fa-solid fa-arrow-right-from-bracket", link: '/account', text: 'Người dùng' },
     ];
 
 //   useEffect(() => {

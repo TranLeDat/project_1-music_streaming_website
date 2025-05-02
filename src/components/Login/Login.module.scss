@@ -5,7 +5,7 @@
 .frame{
     border: 2px solid #fff;
     width: 600px;
-    height: 450px;
+    height: 500px;
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     background-color: #121212;
+    position: relative;
     .title{
         font-size: 36px;
         font-weight: 700;
@@ -69,6 +70,20 @@
                 background-color: #000;
                 border: 0.5px solid white;
 
+            }
+        }
+    }
+    .signinForm{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        .signinbtn{
+            transition: transform 0.5s ease;
+            
+
+            &:hover{
+                transform: scale(1.05);
+                
             }
         }
     }

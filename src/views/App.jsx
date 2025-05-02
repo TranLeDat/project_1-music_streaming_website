@@ -19,7 +19,7 @@ import styles from './App.module.scss'
 import clsx from "clsx";
 import Sidebar from "../components/Sidebar/Sidebar";
 import PlayBox from "../components/PlayBox/PlayBox";
-import ListPop from '../components/Albums/ListSong/ListVpop/ListPop';
+import ListPop from '../components/Albums/ListSong/ListPop';
 
 function App() {
     return (

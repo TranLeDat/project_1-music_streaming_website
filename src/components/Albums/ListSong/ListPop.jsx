@@ -1,10 +1,10 @@
-import ListAlbum from "../../ListAlbum/ListAlbum";
-import Songs from "../../Songs/Songs";
+import ListAlbum from "../ListAlbum/ListAlbum";
+import Songs from "../Songs/Songs";
 import clsx from "clsx";
 import styles from './ListPop.module.scss';
 import { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
-import libraryApi from "../../../../api/libraryApi";
+import libraryApi from "../../../api/libraryApi";
 
 function ListPop() {
     const [searchParams] = useSearchParams();
