@@ -10,12 +10,14 @@ function ListPop() {
     const [searchParams] = useSearchParams();
     const playlistId = searchParams.get("id");
     const [playlist, setPlaylist] = useState(null);
+    const [visibleCount, setVisibleCount] = useState(10); // số bài hát đang hiển thị
 
     useEffect(() => {
         const fetchPlaylist = async () => {
             try {
                 const res = await libraryApi.getPlaylistById(playlistId);
                 setPlaylist(res);
+                setVisibleCount(10); // reset khi đổi playlist
             } catch (error) {
                 console.error("Failed to load playlist", error);
             }
@@ -25,31 +27,34 @@ function ListPop() {
         }
     }, [playlistId]);
 
-    function formatTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
-    }
-
     if (!playlist) return <p className={styles.loading}>Đang tải...</p>;
+
+    const allSongs = playlist.tracks.data || [];
+    const visibleSongs = allSongs.slice(0, visibleCount);
+    const canLoadMore = visibleCount < allSongs.length;
+
 
     return (
         <div className={clsx(styles.libAlbum)}>
             <div className={clsx(styles.album)}>
-                <ListAlbum album={playlist} popl={playlist.tracks.data} />
+                <ListAlbum playlist={playlist}  />
             </div>
             <div className={clsx(styles.songs)}>
-                {playlist.tracks.data.map((song) => (
-                    <Songs
-                        key={song.id}
-                        pop={{
-                            img: song.album.cover_medium,
-                            title: song.title,
-                            artist: song.artist.name,
-                            time: formatTime(song.duration),
-                        }}
-                    />
-                ))}
+                {visibleSongs.map((song) =>
+                    song && song.album ? (
+                        <Songs key={song.id} song={song} />
+                    ) : null
+                )}
+                {canLoadMore && (
+                    <div className={clsx(styles.loadMoreWrapper)}>
+                        <button
+                            className={clsx(styles.loadMoreBtn)}
+                            onClick={() => setVisibleCount((prev) => prev + 10)}
+                        >
+                            Xem thêm
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
