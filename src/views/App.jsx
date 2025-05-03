@@ -20,10 +20,10 @@ import clsx from "clsx";
 import Sidebar from "../components/Sidebar/Sidebar";
 import PlayBox from "../components/PlayBox/PlayBox";
 import ListPop from '../components/Albums/ListSong/ListPop';
-
 function App() {
+    
     return (
-            <AuthProvider>
+            
                 <div className={clsx(styles.container)}>
                     <div className={clsx(styles.left)}>
                         <div className={clsx(styles.sidebar)}>
@@ -57,7 +57,6 @@ function App() {
                         </div>
                     </div>
                 </div>
-            </AuthProvider>
     );
 }
 

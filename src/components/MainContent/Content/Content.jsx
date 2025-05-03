@@ -1,10 +1,15 @@
 
 import styles from './Content.module.scss'
 import clsx from "clsx";
+import { useNavigate } from 'react-router-dom';
 
 
-function Content({content}) {
+function Content({content, contents}) {
     
+    const navigate = useNavigate();
+    const handlePlay = () => {
+    navigate('/disc', { state: { song: content, songList: contents } });
+    };
     
     return (
         <> 
@@ -24,7 +29,7 @@ function Content({content}) {
                     <button className={clsx(styles.actionBtn, styles.actionHeart)}>
                         <i className="fa-regular fa-heart"></i>
                     </button>
-                    <button className={clsx(styles.playBtn)} >
+                    <button onClick={handlePlay} className={clsx(styles.playBtn)} >
                         <i className="fa-solid fa-circle-play"></i>
                         <span className={clsx(styles.titlePlay)}>Play</span>
                     </button>

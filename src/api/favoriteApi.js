@@ -18,6 +18,14 @@ const favoriteApi = {
         } catch (error) {
             console.log('Failed to fetch data', error);
         }
+    },
+    async getFavoriteList(){
+        try {
+            const res = await axiosClient.get(`/chart/tracks`);
+            return res;
+        } catch (error) {
+            console.log('Failed to fetch data', error);
+        }
     }
 }
 

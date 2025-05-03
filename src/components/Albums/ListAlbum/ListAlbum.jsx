@@ -1,11 +1,22 @@
-
 import clsx from 'clsx';
-import styles from './ListAlbum.module.scss'
-
-
+import styles from './ListAlbum.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 function ListAlbum({ playlist }) {
-    
+    const navigate = useNavigate();
+
+    const handlePlayAll = () => {
+        const songs = playlist.tracks?.data || [];
+        if (songs.length === 0) return;
+
+        navigate('/disc', {
+            state: {
+                song: songs[0],         // bài đầu tiên
+                songList: songs         // toàn bộ danh sách
+            }
+        });
+    };
+
     return (
         <div className={clsx(styles.frame)}>
             <div className={clsx(styles.image)}>
@@ -15,7 +26,7 @@ function ListAlbum({ playlist }) {
                 <p className={clsx(styles.desc)}>Playlist</p>
                 <h3 className={clsx(styles.title)}>{playlist.title}</h3>
                 <p className={clsx(styles.number)}>{playlist.nb_tracks} bài hát</p>
-                <button className={clsx(styles.btn)}>
+                <button onClick={handlePlayAll} className={clsx(styles.btn)}>
                     <i className="fa-solid fa-circle-play"></i>
                     Phát tất cả
                 </button>
@@ -23,6 +34,5 @@ function ListAlbum({ playlist }) {
         </div>
     );
 }
-
 
 export default ListAlbum;

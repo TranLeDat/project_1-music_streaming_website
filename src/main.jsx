@@ -3,11 +3,22 @@ import { createRoot } from 'react-dom/client'
 import {BrowserRouter} from 'react-router-dom'
 import './index.css'
 import App from './views/App'
+import { Provider } from 'react-redux'
+import store from './store/store'
+import { SnackbarProvider } from 'notistack';
+import { AuthProvider } from './components/AuthContext/AuthContext'
+
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+  <StrictMode>  
+    <Provider store={store}>
+      <BrowserRouter>
+        <SnackbarProvider anchorOrigin={{vertical: 'top', horizontial: 'right'}}>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </SnackbarProvider>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
 )

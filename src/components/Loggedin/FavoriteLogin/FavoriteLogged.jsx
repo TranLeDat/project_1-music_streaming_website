@@ -35,7 +35,7 @@ function FavoriteLogged({listLiked, favoriteList}){
                 <div className={clsx(styles.favorite)}>
                     <h2 className={clsx(styles.sectionTitle)}>Danh sách yêu thích</h2>
                     {favoriteList.map((favorite) =>(
-                        <Link to='/disc' className={clsx(styles.route)}>
+                        <Link to='/disc' key={favorite.id} className={clsx(styles.route)} state={{ song: favorite, songList: favoriteList }}>
                             <div key={favorite.id} className={clsx(styles.songItems)}>
                                 <div className={clsx(styles.songItem)}>
                                     <i className="fa-solid fa-music"></i>

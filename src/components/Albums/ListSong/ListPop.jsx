@@ -42,7 +42,7 @@ function ListPop() {
             <div className={clsx(styles.songs)}>
                 {visibleSongs.map((song) =>
                     song && song.album ? (
-                        <Songs key={song.id} song={song} />
+                        <Songs key={song.id} song={song} songs={visibleSongs} />
                     ) : null
                 )}
                 {canLoadMore && (

@@ -81,7 +81,7 @@ function Search(){
                             <div className={clsx(styles.sreachList)}>
                                 {Array.isArray(searchResults) && searchResults.length > 0 ? (
                                     searchResults.map((result) => (
-                                        <SearchFeature key={result.id} result={result} />
+                                        <SearchFeature key={result.id} result={result} results={searchResults} />
                                     ))
                                     ) : (
                                     <p className={clsx(styles.searchTitle)}>Không tìm thấy kết quả.</p>

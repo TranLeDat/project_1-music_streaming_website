@@ -1,19 +1,35 @@
 
 import clsx from "clsx";
 import styles from './UserLogin.module.scss'
-import { albums } from "../../data";
-import { favoriteList } from "../../data";
 import avatar from '../../assets/img/user/avatar.png'
 import background from '../../assets/img/user/Rectangle 87.png'
-import { useState } from "react";
-import {Routes, Route, Link} from 'react-router-dom'
-import Favorites from "../Favorites/Favorites";
-import Library from "../Library/Library";
-import ForYou from "../ForYou/ForYou";
+import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'
+import libraryApi from "../../api/libraryApi";
+import favoriteApi from "../../api/favoriteApi";
 
 function UserLogin(){
 
-    const [activeIndex, setActiveIndex] = useState(false)
+    const [activeIndex, setActiveIndex] = useState(false);
+    const [favorites, setFavorites] = useState([]);
+    const [librarys, setLibrarys] = useState([]);
+
+
+    useEffect(()=>{
+        const fetchLibrary = async () =>{
+            try {
+                const res = await libraryApi.getLibrary();
+                console.log('>>> check api library: ', res);
+                setLibrarys(res);
+                const resfavorite = await favoriteApi.getFavoriteList();
+                const trackList = resfavorite?.tracks?.data || [];
+                setFavorites(trackList)
+            } catch (error) {
+                console.log('Failed to fetch lib', error);
+            }
+        };
+        fetchLibrary()
+    },[])
 
     return(
         <>
@@ -31,7 +47,7 @@ function UserLogin(){
                                     onMouseOver={() =>setActiveIndex(0)} 
                                     onMouseOut={() => setActiveIndex(null)}
                                 >
-                                    Đã tạo {albums.length} danh sách    
+                                    Đã tạo {librarys.length} danh sách    
                                 </Link >
                             </li>
 
@@ -40,7 +56,7 @@ function UserLogin(){
                                 <Link  to='/favorite' className={clsx({[styles.active] : activeIndex === 1} )} 
                                     onMouseOver={() =>setActiveIndex(1)} 
                                     onMouseOut={() => setActiveIndex(null)}>
-                                    Đã yêu thích {favoriteList.length} bài
+                                    Đã yêu thích {favorites.length} bài
                                 </Link >
                             </li>
 

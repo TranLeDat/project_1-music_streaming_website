@@ -9,13 +9,15 @@ function formatTime(seconds) {
         const secs = seconds % 60;
         return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
     }
-function Songs({song}){
+function Songs({song, songs}){
+    
+
     if (!song || !song.album) {
         return null;
     }
     return(
         <>
-            <Link to='/disc' className={clsx(styles.route)}>
+            <Link to='/disc' state={{ song: song, songList: songs }} className={clsx(styles.route)}>
                 <div className={clsx(styles.listSong)}>
                         <i className="fa-solid fa-music"></i>
                         <img src={song.album.cover_medium} alt={song.title} className={clsx(styles.image)} />

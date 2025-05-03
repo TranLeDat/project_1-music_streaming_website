@@ -140,7 +140,7 @@ function Home(){
                 <Slider {...settingContent}>
                   {contents.map((content) => (
                     <div key={content.id} className={styles.slideItem}> 
-                      <Content content={content} />
+                      <Content content={content} contents={contents} />
                     </div>
                   ))}
                 </Slider>
@@ -157,7 +157,7 @@ function Home(){
 
               <Slider ref={latestSliderRef} className={clsx(styles.latestSlider)} {...latestSetting}>
                 {Array.isArray(latests) && latests.map((latest) => (
-                  <Latest key={latest.id} latest={latest} />
+                  <Latest key={latest.id} latest={latest} latests={latests} />
                 ))}
               </Slider>
 
