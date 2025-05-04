@@ -10,7 +10,7 @@ function ListPop() {
     const [searchParams] = useSearchParams();
     const playlistId = searchParams.get("id");
     const [playlist, setPlaylist] = useState(null);
-    const [visibleCount, setVisibleCount] = useState(10); // số bài hát đang hiển thị
+    const [visibleCount, setVisibleCount] = useState(10); 
 
     useEffect(() => {
         const fetchPlaylist = async () => {

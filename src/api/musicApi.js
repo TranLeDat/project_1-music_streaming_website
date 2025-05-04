@@ -13,17 +13,28 @@ const musicApi = {
   },
     
   
-    async search(query) {
-      const res = await axiosClient.get('/search', {
-        params: { q: query },
-      });
-      return res.data;
-    },
+  async search(query) {
+    const res = await axiosClient.get('/search', {
+      params: { q: query },
+    });
+    return res.data;
+  },
   
-    getTrack(id) {
-      return axiosClient.get(`/track/${id}`);
-    },
-  };
+  getTrack(id) {
+    return axiosClient.get(`/track/${id}`);
+  },
+
+  async getArtist(id){
+    const res = await axiosClient.get(`/artist/${id}`);
+    return res;
+  },
+
+  async getTopTracksByArtist(artistId) {
+    const res = await axiosClient.get(`/artist/${artistId}/top`);
+    return res?.data ;
+  }
+  
+};
   
 
 

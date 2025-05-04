@@ -131,6 +131,8 @@ function Home(){
         outStandingSliderRef.current?.slickPrev();
       }
 
+
+      
     
     return(
         <>

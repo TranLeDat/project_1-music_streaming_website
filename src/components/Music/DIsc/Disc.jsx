@@ -2,10 +2,13 @@ import clsx from 'clsx';
 import styles from './Disc.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { addRecentSong } from '../../../store/recentSlice';
 
 function Disc() {
+  const dispatch = useDispatch();
   const location = useLocation();
-  const { song, songList } = location.state || {};
+  const { song, songList, source } = location.state || {};
 
   // Chuẩn hóa danh sách bài hát (convert từ Deezer hoặc local data)
   const normalizedSongs = (songList || []).map((item) => ({
@@ -41,6 +44,12 @@ function Disc() {
   const [currentTime, setCurrentTime] = useState(0);
 
   const currentSong = songs[currentSongIndex];
+
+  useEffect(() =>{
+    if(currentSong){
+      dispatch(addRecentSong(currentSong))
+    }
+  }, [currentSongIndex])
 
   const handlePlayPause = () => {
     const audio = audioRef.current;

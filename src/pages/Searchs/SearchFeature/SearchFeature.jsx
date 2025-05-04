@@ -20,7 +20,7 @@ function SearchFeature({ result, results }) {
     const duration = `${minute}:${second}`;
 
     return (
-        <Link to="/disc" state={{ song: result, songList: results }} className={clsx(styles.link)} >
+        <Link to="/disc" state={{ song: result, songList: results, source: 'search'}} className={clsx(styles.link)} >
             <div className={clsx(styles.frame)}>
                 <div className={clsx(styles.infos)}>
                     <img src={imageUrl} alt={title} className={clsx(styles.cover)} />

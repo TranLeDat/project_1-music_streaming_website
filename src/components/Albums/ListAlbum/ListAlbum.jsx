@@ -11,8 +11,9 @@ function ListAlbum({ playlist }) {
 
         navigate('/disc', {
             state: {
-                song: songs[0],         // bài đầu tiên
-                songList: songs         // toàn bộ danh sách
+                song: songs[0],         
+                songList: songs,
+                source: 'library'        
             }
         });
     };

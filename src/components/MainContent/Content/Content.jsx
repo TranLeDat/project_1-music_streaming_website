@@ -8,7 +8,7 @@ function Content({content, contents}) {
     
     const navigate = useNavigate();
     const handlePlay = () => {
-    navigate('/disc', { state: { song: content, songList: contents } });
+    navigate('/disc', { state: { song: content, songList: contents, source: 'home' } });
     };
     
     return (

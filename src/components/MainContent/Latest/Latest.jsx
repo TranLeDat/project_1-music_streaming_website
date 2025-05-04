@@ -6,7 +6,7 @@ function Latest({latest, latests}){
     
     return(
         <>
-            <Link to="/disc"state={{ song: latest, songList: latests }} className={clsx(styles.item)}>
+            <Link to="/disc"state={{ song: latest, songList: latests, source: 'home' }} className={clsx(styles.item)}>
                 <div className={clsx(styles.coverWrapper)}>   
                     <img src={latest.album?.cover} alt={latest.title} className={clsx(styles.cover)} />
                 </div>

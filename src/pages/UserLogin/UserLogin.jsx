@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
 import libraryApi from "../../api/libraryApi";
 import favoriteApi from "../../api/favoriteApi";
+import { useSelector } from "react-redux";
+import TracksSeen from "../../components/Loggedin/TracksSeen/TracksSeen";
 
 function UserLogin(){
 
@@ -14,6 +16,8 @@ function UserLogin(){
     const [favorites, setFavorites] = useState([]);
     const [librarys, setLibrarys] = useState([]);
 
+    const recentSongs = useSelector((state) => state.recent.list);
+    console.log('Recent Songs:', recentSongs);
 
     useEffect(()=>{
         const fetchLibrary = async () =>{
@@ -72,6 +76,12 @@ function UserLogin(){
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className={clsx(styles.seen)}>
+                <h3 className={clsx(styles.seenTitle)}>Đã nghe gần đây</h3>
+                {recentSongs.map((song) => (
+                    <TracksSeen key={song.id} track={song} tracks={recentSongs}/>
+                ))}
             </div>
         </>
     )

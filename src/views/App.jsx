@@ -20,6 +20,7 @@ import clsx from "clsx";
 import Sidebar from "../components/Sidebar/Sidebar";
 import PlayBox from "../components/PlayBox/PlayBox";
 import ListPop from '../components/Albums/ListSong/ListPop';
+import ClientLogin from '../pages/ClientLogin/ClientLogin';
 function App() {
     
     return (
@@ -53,6 +54,7 @@ function App() {
                                     <Route path="formCreate" element={<FormCreate />} />
                                 </Route>
                                 <Route path="/disc" element={<Disc />} />
+                                <Route path="/client" element={<ClientLogin />} />
                             </Routes>
                         </div>
                     </div>

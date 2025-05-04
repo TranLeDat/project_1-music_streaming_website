@@ -23,8 +23,8 @@ const searchApi = {
         
             const trackRes = await axiosClient.get(`/artist/${firstArtist.id}/top`, {
                 params: {
-                limit: _limit,
-                index,
+                    limit: _limit,
+                    index,
                 },
             });
         

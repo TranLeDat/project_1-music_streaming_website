@@ -17,7 +17,7 @@ function Songs({song, songs}){
     }
     return(
         <>
-            <Link to='/disc' state={{ song: song, songList: songs }} className={clsx(styles.route)}>
+            <Link to='/disc' state={{ song: song, songList: songs, source:'library' }} className={clsx(styles.route)}>
                 <div className={clsx(styles.listSong)}>
                         <i className="fa-solid fa-music"></i>
                         <img src={song.album.cover_medium} alt={song.title} className={clsx(styles.image)} />
