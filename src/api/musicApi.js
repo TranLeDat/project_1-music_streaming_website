@@ -29,10 +29,16 @@ const musicApi = {
     return res;
   },
 
-  async getTopTracksByArtist(artistId) {
-    const res = await axiosClient.get(`/artist/${artistId}/top`);
-    return res?.data ;
+  async getTopTracksByArtist(artistId, _limit = 10, _index = 0) {
+    const res = await axiosClient.get(`/artist/${artistId}/top`, {
+      params: {
+        limit: _limit,
+        index: _index,
+      },
+    });
+    return res?.data || [];
   }
+  
   
 };
   

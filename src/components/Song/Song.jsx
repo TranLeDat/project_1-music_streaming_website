@@ -13,7 +13,7 @@ function Song({item, items, source}){
                      <div key={item.id} className={clsx(styles.songItems)}>
                         <div className={clsx(styles.songItem)}>
                                <i className="fa-solid fa-music"></i>
-                            <img src={item.img} alt={item.title} className={clsx(styles.image)} />
+                            <img src={item.album?.cover_small} alt={item.title} className={clsx(styles.image)} />
                             <div className={clsx(styles.info)}>
                                 <h3 className={clsx(styles.title)}>{item.title}</h3>
                                 <p className={clsx(styles.artist)}>{item.artist?.name || item.artist}</p>

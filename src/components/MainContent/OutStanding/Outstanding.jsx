@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './Outstanding.module.scss';
 
-function Outstanding({ outStanding }) {
+function Outstanding({ outStanding, source }) {
   return (
     <Link
-      to="/client"
-      state={{ artistId: outStanding.artist?.id }}
+    to="/client"
+    state={{ artistId: outStanding.artist?.id, source }}
       className={clsx(styles.outStanding)}
     >
       <div className={clsx(styles.wrapper)}>

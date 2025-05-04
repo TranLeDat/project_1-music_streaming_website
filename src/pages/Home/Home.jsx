@@ -179,7 +179,7 @@ function Home(){
 
               <Slider ref={outStandingSliderRef} className={clsx(styles.outStandingSlider)} {...outStandingsSetting}>
                 {Array.isArray(outStandings) && outStandings.map((outStanding) => (
-                  <Outstanding key={outStanding.id} outStanding={outStanding} />
+                  <Outstanding key={outStanding.id} outStanding={outStanding} source="home" />
                 ))}
               </Slider>
 

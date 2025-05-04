@@ -12,14 +12,14 @@ function Toolbar() {
 
     // Xác định menu nào cần active
     const getActiveMenuId = () => {
-        if (pathname === '/disc') {
+        if (pathname === '/disc' || pathname === '/client') {
             if (state.source === 'favorite') return 'Favorites';
             if (state.source === 'library') return 'Library';
             if (state.source === 'search') return 'Search';
             if (state.source === 'home') return 'Home';
             if (state.source === 'account' || state.source === 'foryou') return 'account';
         }
-
+    
         if (pathname.startsWith('/favorite')) return 'Favorites';
         if (pathname.startsWith('/library')) return 'Library';
         if (pathname.startsWith('/search')) return 'Search';
@@ -27,6 +27,7 @@ function Toolbar() {
         if (pathname.startsWith('/account') || pathname.startsWith('/foryou')) return 'account';
         return 'Home';
     };
+    
 
     const activeMenuId = getActiveMenuId();
 
