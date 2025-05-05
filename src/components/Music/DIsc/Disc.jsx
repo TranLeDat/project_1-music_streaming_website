@@ -1,16 +1,17 @@
 import clsx from 'clsx';
 import styles from './Disc.module.scss';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { useLocation} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { addRecentSong } from '../../../store/recentSlice';
+import { setCurrentSong, setPlaylist } from '../../../store/playSlice';
 
 function Disc() {
   const dispatch = useDispatch();
   const location = useLocation();
-  const { song, songList, source } = location.state || {};
+  const { song, songList } = location.state || {};
 
-  // Chuẩn hóa danh sách bài hát (convert từ Deezer hoặc local data)
+  // Chuẩn hóa danh sách bài hát
   const normalizedSongs = (songList || []).map((item) => ({
     id: item.id,
     title: item.title || 'Unknown Title',
@@ -19,10 +20,7 @@ function Disc() {
       (item.album && item.album.cover_medium) ||
       item.img ||
       'https://via.placeholder.com/150',
-    src:
-      item.src ||
-      item.preview ||
-      '',
+    src: item.src || item.preview || '',
     duration: item.duration || 0,
     lyrics: item.lyrics || [''],
   }));
@@ -45,11 +43,18 @@ function Disc() {
 
   const currentSong = songs[currentSongIndex];
 
-  useEffect(() =>{
-    if(currentSong){
-      dispatch(addRecentSong(currentSong))
+  useEffect(() => {
+    if (currentSong) {
+      dispatch(addRecentSong(currentSong));
     }
-  }, [currentSongIndex])
+  }, [currentSongIndex]);
+
+  useEffect(() => {
+    if (song && songList.length > 0) {
+      dispatch(setCurrentSong(currentSong));
+      dispatch(setPlaylist(songs));
+    }
+  }, [dispatch, song, songList]);
 
   const handlePlayPause = () => {
     const audio = audioRef.current;
