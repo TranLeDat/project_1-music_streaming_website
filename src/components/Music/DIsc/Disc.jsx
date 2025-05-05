@@ -1,7 +1,8 @@
+// Disc.jsx
 import clsx from 'clsx';
 import styles from './Disc.module.scss';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation} from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addRecentSong } from '../../../store/recentSlice';
 import { setCurrentSong, setPlaylist } from '../../../store/playSlice';
@@ -9,10 +10,12 @@ import { setCurrentSong, setPlaylist } from '../../../store/playSlice';
 function Disc() {
   const dispatch = useDispatch();
   const location = useLocation();
-  const { song, songList } = location.state || {};
+  const [searchParams] = useSearchParams();
+  const songId = searchParams.get('songId');
 
-  // Chuẩn hóa danh sách bài hát
-  const normalizedSongs = (songList || []).map((item) => ({
+  const { songList = [] } = location.state || {};
+
+  const normalizedSongs = songList.map((item) => ({
     id: item.id,
     title: item.title || 'Unknown Title',
     artist: typeof item.artist === 'object' ? item.artist.name : item.artist || 'Unknown Artist',
@@ -27,8 +30,7 @@ function Disc() {
 
   const [songs] = useState(normalizedSongs);
   const [currentSongIndex, setCurrentSongIndex] = useState(() => {
-    if (!song) return 0;
-    const index = normalizedSongs.findIndex((s) => s.id === song.id);
+    const index = songs.findIndex((s) => String(s.id) === String(songId));
     return index !== -1 ? index : 0;
   });
 
@@ -46,15 +48,10 @@ function Disc() {
   useEffect(() => {
     if (currentSong) {
       dispatch(addRecentSong(currentSong));
-    }
-  }, [currentSongIndex]);
-
-  useEffect(() => {
-    if (song && songList.length > 0) {
       dispatch(setCurrentSong(currentSong));
       dispatch(setPlaylist(songs));
     }
-  }, [dispatch, song, songList]);
+  }, [currentSongIndex]);
 
   const handlePlayPause = () => {
     const audio = audioRef.current;
@@ -101,15 +98,15 @@ function Disc() {
   }, [isDragging]);
 
   useEffect(() => {
+    const audio = audioRef.current;
     const handleEnded = () => {
       if (isRepeated) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
+        audio.currentTime = 0;
+        audio.play();
       } else {
         handleNext();
       }
     };
-    const audio = audioRef.current;
     audio.addEventListener('ended', handleEnded);
     return () => audio.removeEventListener('ended', handleEnded);
   }, [isRepeated, currentSongIndex]);
@@ -181,9 +178,9 @@ function Disc() {
               <i className="fa-regular fa-heart"></i>
             </div>
             <div className={clsx(styles.controls)}>
-              <audio ref={audioRef} src={currentSong.src || ''} />
+            {currentSong.src && <audio ref={audioRef} src={currentSong.src} />}
               <div className={clsx(styles.progressWrapper)} ref={progressRef}>
-                <span>{formatTime(currentTime)}</span>
+                <span className={clsx(styles.current)}>{formatTime(currentTime)}</span>
                 <div
                   className={clsx(styles.progressTrack)}
                   onMouseDown={handleMouseDown}
@@ -195,26 +192,26 @@ function Disc() {
                     <div className={clsx(styles.progressThumb)}></div>
                   </div>
                 </div>
-                <span>{formatTime(currentSong.duration)}</span>
+                <span className={clsx(styles.totalTime)}>{formatTime(currentSong.duration)}</span>
               </div>
               <div className={clsx(styles.control)}>
-                <button onClick={() => setIsShuffled(!isShuffled)}>
+                <button className={clsx(styles.btn)} onClick={() => setIsShuffled(!isShuffled)}>
                   <i className="fa-solid fa-shuffle"></i>
                 </button>
-                <button onClick={handlePrev}>
+                <button className={clsx(styles.btn)} onClick={handlePrev}>
                   <i className="fa-solid fa-backward"></i>
                 </button>
-                <button onClick={handlePlayPause}>
+                <button className={clsx(styles.btn)} onClick={handlePlayPause}>
                   {isPlaying ? (
                     <i className="fa-solid fa-pause"></i>
                   ) : (
                     <i className="fa-solid fa-play"></i>
                   )}
                 </button>
-                <button onClick={handleNext}>
+                <button className={clsx(styles.btn)} onClick={handleNext}>
                   <i className="fa-solid fa-forward"></i>
                 </button>
-                <button onClick={() => setIsRepeated(!isRepeated)}>
+                <button className={clsx(styles.btn)} onClick={() => setIsRepeated(!isRepeated)}>
                   <i className="fa-solid fa-repeat"></i>
                 </button>
               </div>

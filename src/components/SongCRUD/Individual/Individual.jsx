@@ -1,6 +1,5 @@
 import styles from './Individual.module.scss';
 import clsx from 'clsx';
-import { foryous } from '../../../foryou';
 import VideoList from '../VideoList/VideoList';
 import upload from '../../../assets/img/login/upload.png';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ import { useState } from 'react';
 const subjects = ['Video', 'Trạng thái', 'Ngày', 'Lượt xem', 'Bình luận', 'Thời lượng'];
 
 function Individual() {
-    const [songlist, setSongList] = useState(foryous);
+    const [songlist, setSongList] = useState();
 
     const handleRemoveSong = (songId)=>{
         const updateSongList = songlist.filter((song) => song.id !== songId);

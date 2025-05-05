@@ -27,7 +27,8 @@
                 
                 &:hover{
                     background-color: #000;
-                    transform: scale(1.01)
+                    transform: scale(1.01);
+                    
                 }
         
                 .image{
@@ -38,11 +39,17 @@
                     cursor: pointer;
                 }
                 .info{
+                    :hover{
+                        color: #0862b0;
+                    }
                     .title{
                         font-size: 18px;
                         font-weight: 600;
                         margin: 0;
                         cursor: pointer;
+                        color: #fff;
+
+                        
                     }
                     .artist{
                         margin: 0;
@@ -50,6 +57,7 @@
                         font-weight: 600;
                         opacity: 0.6;
                         cursor: pointer;
+                        color: #fff;
                     }
                 }
                 .time{

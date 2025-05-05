@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './FormCreate.module.scss';
 import clsx from 'clsx';
-import { foryous } from '../../../foryou';
+
 import img from '../../../assets/img/login/share.png'
 
 const uploads = [
@@ -18,7 +18,7 @@ function FormCreate(){
         const [artist, setArtist] = useState('');
         const [musician, setMusician] = useState('');
         const [desc, setDesc] = useState('');
-        const [songList, setSongList] = useState(foryous);
+        const [songList, setSongList] = useState();
         
         const audioRef = useRef();
         const thumbnailRef = useRef();

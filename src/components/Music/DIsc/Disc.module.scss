@@ -85,7 +85,8 @@
             width: 100%;
             max-width: 400px;
   
-            .title {
+            .title { 
+              color: white;
               .name {
                 font-size: 24px;
                 font-weight: 700;
@@ -132,7 +133,7 @@
                 font-size: 12px;
                 color: white;
               }
-  
+              
               .progressTrack {
                 position: relative;
                 flex: 1;

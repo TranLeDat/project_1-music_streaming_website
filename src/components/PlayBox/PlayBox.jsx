@@ -1,4 +1,5 @@
 import styles from './PlayBox.module.scss';
+import bgc from '../../assets/img/login/image-cache.jpg'
 import clsx from 'clsx';
 import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -136,13 +137,13 @@ function PlayBox() {
       </div>
       <div className={clsx(styles.infos)}>
         <img
-          src={song.img || song.albumArt}
+          src={song.img || song.albumArt || bgc}
           alt='album Art'
           className={clsx(styles.albumArt)}
         />
         <div className={clsx(styles.details)}>
-          <h3 className={clsx(styles.title)}>{song.title}</h3>
-          <p className={clsx(styles.artist)}>{song.artist}</p>
+          <h3 className={clsx(styles.title)}>{song.title || 'Tên bài hát'}</h3>
+          <p className={clsx(styles.artist)}>{song.artist || 'Tên ca sĩ'}</p>
         </div>
         <div className={clsx(styles.icon)}><i className="fa-solid fa-ellipsis-vertical"></i></div>
       </div>

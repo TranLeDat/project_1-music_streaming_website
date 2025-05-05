@@ -19,6 +19,20 @@ const favoriteApi = {
             console.log('Failed to fetch data', error);
         }
     },
+    async getLikeList({_limit = 10, _page = 1} = {}){
+        try {
+            const index = (_page -1) * _limit
+            const res = await axiosClient.get(`/chart/tracks`,{
+                params:{
+                    limit : _limit,
+                    index,
+                }
+            });
+            return res;
+        } catch (error) {
+            console.log('Failed to fetch data', error);
+        }
+    },
     async getFavoriteList(){
         try {
             const res = await axiosClient.get(`/chart/tracks`);

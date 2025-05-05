@@ -1,5 +1,5 @@
 import ListAlbum from "../ListAlbum/ListAlbum";
-import Songs from "../Songs/Songs";
+import Song from '../../Song/Song'
 import clsx from "clsx";
 import styles from './ListPop.module.scss';
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ function ListPop() {
             <div className={clsx(styles.songs)}>
                 {visibleSongs.map((song) =>
                     song && song.album ? (
-                        <Songs key={song.id} song={song} songs={visibleSongs} />
+                        <Song key={song.id} item={song} items={visibleSongs} source='library' />
                     ) : null
                 )}
                 {canLoadMore && (

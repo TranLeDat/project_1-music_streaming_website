@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './SearchFeature.module.scss';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 
 SearchFeature.propTypes = {
   result: PropTypes.object.isRequired,
 };
 
 function SearchFeature({ result, results }) {
+    const query = queryString.stringify({songId: result.id})
+
     // chuẩn bị dữ liệu trước
     const imageUrl = result.album?.cover_medium || result.picture_medium || result.picture || '';
     const title = result.title || result.name || result.genre || 'Unknown';
@@ -20,7 +23,7 @@ function SearchFeature({ result, results }) {
     const duration = `${minute}:${second}`;
 
     return (
-        <Link to="/disc" state={{ song: result, songList: results, source: 'search'}} className={clsx(styles.link)} >
+        <Link to={{pathname: '/disc', search: `?${query}`}} state={{ songList: results, source: 'search'}} className={clsx(styles.link)} >
             <div className={clsx(styles.frame)}>
                 <div className={clsx(styles.infos)}>
                     <img src={imageUrl} alt={title} className={clsx(styles.cover)} />
