@@ -77,10 +77,11 @@ function Header() {
           inputValue={input}
           onInputChange={(e, value) => setInput(value)}
           onChange={handleSelect}
+          
           renderInput={(params) => (
             <TextField
               {...params}
-              sx={{ backgroundColor: 'white', width: '500px' }}
+              sx={{ backgroundColor: 'white', width: '600px' }}
               placeholder="What do you want to listen to?"
               fullWidth
               size="small"
