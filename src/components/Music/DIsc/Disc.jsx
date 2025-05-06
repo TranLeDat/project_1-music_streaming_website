@@ -1,7 +1,6 @@
-// Disc.jsx
 import clsx from 'clsx';
 import styles from './Disc.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addRecentSong } from '../../../store/recentSlice';
@@ -13,22 +12,24 @@ function Disc() {
   const [searchParams] = useSearchParams();
   const songId = searchParams.get('songId');
 
-  const { songList = [] } = location.state || {};
+  const { songList, song } = location.state || {};
 
-  const normalizedSongs = songList.map((item) => ({
+  const normalizeSong = (item) => ({
     id: item.id,
     title: item.title || 'Unknown Title',
     artist: typeof item.artist === 'object' ? item.artist.name : item.artist || 'Unknown Artist',
-    img:
-      (item.album && item.album.cover_medium) ||
-      item.img ||
-      'https://via.placeholder.com/150',
-    src: item.src || item.preview || '',
+    img: item.album?.cover_medium || item.img || 'https://via.placeholder.com/150',
+    src: item.preview || item.src || '',
     duration: item.duration || 0,
     lyrics: item.lyrics || [''],
-  }));
+  });
 
-  const [songs] = useState(normalizedSongs);
+  const songs = useMemo(() => {
+    if (Array.isArray(songList)) return songList.map(normalizeSong);
+    if (song) return [normalizeSong(song)];
+    return [];
+  }, [songList, song]);
+
   const [currentSongIndex, setCurrentSongIndex] = useState(() => {
     const index = songs.findIndex((s) => String(s.id) === String(songId));
     return index !== -1 ? index : 0;
@@ -178,7 +179,7 @@ function Disc() {
               <i className="fa-regular fa-heart"></i>
             </div>
             <div className={clsx(styles.controls)}>
-            {currentSong.src && <audio ref={audioRef} src={currentSong.src} />}
+              {currentSong.src && <audio ref={audioRef} src={currentSong.src} />}
               <div className={clsx(styles.progressWrapper)} ref={progressRef}>
                 <span className={clsx(styles.current)}>{formatTime(currentTime)}</span>
                 <div

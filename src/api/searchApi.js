@@ -36,6 +36,20 @@ const searchApi = {
             return [];
         }
     },
+    async getTrackByName({query, _limit = 5} = {}){
+        try {
+            const tracksRes = await axiosClient.get(`/search/`,{
+                params:{
+                    q: query,
+                    limit: _limit,
+                }
+            });
+            const trackList = tracksRes?.data || [];
+            return trackList;
+        } catch (error) {
+            console.log('Failed to fetch data', error);
+        }
+    }
       
 }
 
