@@ -1,13 +1,12 @@
 import clsx from "clsx";
 import styles from './Account.module.scss';
-
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import { useState } from "react";
 import { Box, Button } from "@mui/material";
 import Register from "../../components/Auth/Register/Register";
-import Login from "../../components/Auth/Login/Login"; // Đảm bảo import đúng component Login
+import Login from "../../components/Auth/Login/Login"; 
 import UserLogin from "../UserLogin/UserLogin";
 import { useAuth } from "../../components/AuthContext/AuthContext";
 
@@ -19,7 +18,6 @@ const MODE = {
 function Account() {
     
     const { isLoggedIn } = useAuth();
-
 
     const [open, setOpen] = useState(false);
     const [mode, setMode] = useState(MODE.LOGIN);

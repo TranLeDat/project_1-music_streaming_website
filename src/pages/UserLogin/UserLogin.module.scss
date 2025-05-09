@@ -11,7 +11,7 @@
         display: flex;
         gap: 50px;
         position: absolute;
-        top: 150px;
+        top: 160px;
         left: 50px;
         .avatar{
             width: 200px;
@@ -21,42 +21,56 @@
 
         }
         .content{
-            .userName{
-                font-size: 24px;
-                font-weight: 700;
-                color: #fff;
-                margin: 140px 0 0 0;
-            }
-            .info{
-                display: flex;
-                gap: 20px;
-                align-items: center;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                cursor: pointer;
-
+            display: flex;
+            .main{
+                .userName{
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin: 140px 0 0 0;
+                }
+            
                 
-
-                .title{
-                    font-size: 16px;
-                    font-weight: 600;
+                .info{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    list-style: none;
+                    padding: 0;
                     margin: 0;
-                    a{
-                        color: #fff;
+                    cursor: pointer;
+    
+                    
+    
+                    .title{
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin: 0;
+                        a{
+                            color: #fff;
+                        }
+                        .active{
+                            color: #069AD6;
+                            transition: all 0.75s ease;
+                        }
                     }
-                    .active{
-                        color: #069AD6;
-                        transition: all 0.75s ease;
+                    .circle{
+                        width: 5px;
+                        height: 5px;
+                        background-color: #fff;
+                        border-radius: 50%;
                     }
+    
                 }
-                .circle{
-                    width: 5px;
-                    height: 5px;
-                    background-color: #fff;
-                    border-radius: 50%;
+            }
+            .logout{
+                margin-top: 160px;
+                margin-left: 15vw;
+                .btnLogout{
+                    font-size: 16px;
+                    padding: 7px;
+                    font-weight: 700;
                 }
-
             }
         }
     }

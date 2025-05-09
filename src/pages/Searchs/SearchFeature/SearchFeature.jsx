@@ -11,7 +11,6 @@ SearchFeature.propTypes = {
 function SearchFeature({ result, results }) {
     const query = queryString.stringify({songId: result.id})
 
-    // chuẩn bị dữ liệu trước
     const imageUrl = result.album?.cover_medium || result.picture_medium || result.picture || '';
     const title = result.title || result.name || result.genre || 'Unknown';
     const subTitle = result.artist?.name || '';

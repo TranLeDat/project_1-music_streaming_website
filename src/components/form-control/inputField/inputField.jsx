@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 import { TextField, InputAdornment, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search'; // 🎯 Import icon MUI
+import SearchIcon from '@mui/icons-material/Search'; 
 
 InputField.propTypes = {
   form: PropTypes.object.isRequired,
@@ -34,7 +34,7 @@ function InputField({ form, name, label, disable }) {
             error={!!hasError}
             helperText={errors[name]?.message}
             InputProps={{
-              endAdornment: ( // 🎯 Gắn icon vào bên trong
+              endAdornment: ( 
                 <InputAdornment position="end">
                   <IconButton edge="end">
                     <SearchIcon sx={{ color: 'white' }} />

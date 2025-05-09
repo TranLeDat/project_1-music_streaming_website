@@ -2,7 +2,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from "../pages/Home/Home";
 import Search from "../pages/Searchs/Search";
-
 import Library from "../pages/Library/Library";
 import Favorites from "../pages/Favorites/Favorites";
 import Setting from "../pages/Setting/Setting";
@@ -12,9 +11,7 @@ import Disc from "../components/Music/DIsc/Disc";
 import { AuthProvider } from "../components/AuthContext/AuthContext";
 import FormCreate from "../components/SongCRUD/FormCreate/FormCreate";
 import Individual from "../components/SongCRUD/Individual/Individual";
-
 import Header from "../components/MainContent/Header/Header";
-
 import styles from './App.module.scss'
 import clsx from "clsx";
 import Sidebar from "../components/Sidebar/Sidebar";

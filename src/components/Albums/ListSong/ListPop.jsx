@@ -17,7 +17,7 @@ function ListPop() {
             try {
                 const res = await libraryApi.getPlaylistById(playlistId);
                 setPlaylist(res);
-                setVisibleCount(10); // reset khi đổi playlist
+                setVisibleCount(10); 
             } catch (error) {
                 console.error("Failed to load playlist", error);
             }

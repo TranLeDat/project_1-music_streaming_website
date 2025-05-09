@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import styles from './Song.module.scss';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
@@ -10,14 +11,16 @@ function formatTime(seconds) {
 }
 
 function Song({ item, items, source }) {
+  const query = queryString.stringify({songId: item.id})
+
   return (
     <div className={clsx(styles.frame)}>
         <Link
             to={{
               pathname: '/disc',
-              search: `?songId=${item.id}&source=${source}`,
+              search: `?${query}`,
             }}
-            state={{ songList: items }}
+            state={{ songList: items, source: {source} }}
             className={clsx(styles.route)}
         >
             <div key={item.id} className={clsx(styles.songItems)}>
