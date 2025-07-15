@@ -119,7 +119,7 @@ function Favorites() {
               ))}
               {hasMoreLikes && (
                 <div className={clsx(styles.loadMore)}>
-                  <button onClick={() => setLoadMoreLikes(true)}>Thêm nữa</button>
+                  <button className={clsx(styles.loadMoreBtn)} onClick={() => setLoadMoreLikes(true)}>Thêm nữa</button>
                 </div>
               )}
             </div>
@@ -132,7 +132,7 @@ function Favorites() {
               ))}
               {hasMoreFavorites && (
                 <div className={clsx(styles.loadMore)}>
-                  <button onClick={() => setLoadMoreFavorites(true)}>Thêm nữa</button>
+                  <button className={clsx(styles.loadMoreBtn)} onClick={() => setLoadMoreFavorites(true)}>Thêm nữa</button>
                 </div>
               )}
             </div>
