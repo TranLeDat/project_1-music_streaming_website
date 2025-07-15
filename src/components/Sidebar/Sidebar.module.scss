@@ -1,20 +1,18 @@
 .sidebar{
     height: 75vh;
-    background-color: #121212;
-    padding: 23px;
-    
-
-
+    // background-color: #121212;
+    padding: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
     
     .logo{
         display: flex;
         justify-content: center;
         h1{
-            font-size: 40px;
+            font-size: 5.6rem;
             font-weight: 800;
             color: white;
-            margin: 0px 0px 23px 0px;
-            
         }
     }
 
