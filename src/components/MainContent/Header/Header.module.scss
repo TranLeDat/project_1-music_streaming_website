@@ -1,28 +1,29 @@
 .header{
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 5rem;
                 
     .previous{
-        font-size: 24px;
-        margin-right: 20px;
+        font-size: 3rem; 
         i{
-            color: #706e6e;
+            color: var(--bg-header-previous);
         }
-         :hover{
-            color: #ffffff;
-         }
+        :hover{
+            color: var(--bg-header-previous-hover);
+        }
     }
     .searchBars{
-        padding: 15px;
-           
+        padding: 1.5rem; 
     }
 
     .notification{
-        font-size: 24px;
-        margin-left: 33vw;
+        font-size: 3rem;
+        margin-left: 5%;
         i{
-            color: #706e6e;
+            color: var(--bg-header-previous);
+        }
+        :hover{
+            color: var(--bg-header-previous-hover);
         }
     }
 }
