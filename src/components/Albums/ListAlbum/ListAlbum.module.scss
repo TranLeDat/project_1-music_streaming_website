@@ -1,58 +1,58 @@
-:root{
-    --color-start : #069AD6;
-    --color-end : #9747FF;
-}
 .frame{
     display: flex;
     .image{   
         .img{
-            width: 400px;
-            height: 400px;
+            width: 40rem;
+            height: 40rem;
             object-fit: cover;
             box-sizing: border-box;
-            border-radius: 10px;
+            border-radius: 1rem;
             border: 1px solid white;
 
         }
     }
     .infos{
-        margin: 200px 40px 40px 40px;
+        margin: 20rem 4rem 4rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         .desc{
-            font-size: 18px;
+            font-size: 2rem;
             font-weight: 600;
             opacity: 0.8;
             margin: 0;
             color: #fff;
         }
         .title{
-            font-size: 28px;
+            font-size: 2.8rem;
             font-weight: 700;
             color: #fff;
             margin: 0;
         }
         .number{
-            font-size: 16px;
+            font-size: 1.6rem;
             font-weight: 500;
             opacity: 0.6;
             color: #fff;
-            margin: 0 0 30px 0;
+            margin: 0 0 3rem 0;
         }
         .btn{
-            font-size: 18px;
+            font-size: 1.8rem;
             font-weight: 700;
-            width: 180px;
-            height: 50px;
-            border-radius: 50px;
+            width: 18rem;
+            height: 5rem;
+            border-radius: 5rem;
             color: black;
             background: linear-gradient(to bottom, var(--color-start), var(--color-end));
             transition: transform 0.5s ease box-shadow 0.3 ease;
+            border: 1px solid #fff;
 
             &:hover{
-                box-shadow: 0 0 15px #eae6e6;
+                box-shadow: 0 0 1.5rem #eae6e6;
             }
             i{
-                font-size: 20px;
-                margin-right: 10px;
+                font-size: 2rem;
+                margin-right: 1rem;
                 color: black;
             }
         }

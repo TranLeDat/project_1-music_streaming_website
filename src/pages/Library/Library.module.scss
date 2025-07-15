@@ -2,15 +2,17 @@
 .container{   
     display: flex;
     flex-direction: column;
+    margin-top: 5rem;
     .albums{
         
         .frameLogin{
             display: flex;
             flex-wrap: wrap;
-            
-            gap: 50px;
+            justify-content: center;
+            gap: 5rem;
             list-style: none;
             padding: 0;
+
             .album{
                 .albumLink{
                     color: white;
@@ -20,7 +22,7 @@
     }
     .notLogin{
         display: flex;
-        margin-top: 150px;
+        margin-top: 15rem;
         align-items: center;
         justify-content: center;
     }
