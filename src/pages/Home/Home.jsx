@@ -113,7 +113,7 @@ function Home() {
 
   return (
     <>
-      {/* {contnet} */}
+      {/* {contentt} */}
       <div className={clsx(styles.contents)}>
         <div className={styles.sliderWrapper}>
           <Slider {...settingContent}>
