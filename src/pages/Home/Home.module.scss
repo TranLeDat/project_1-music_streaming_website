@@ -126,7 +126,7 @@
       }
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: var(--bgc-arrowBtn-hover);
       }
   
       &.left {
@@ -146,7 +146,8 @@
   padding: 0 2rem;
 
   .outStandingTitle {
-    font-size: 2.8rem;
+    font-size: 4.2rem;
+    font-weight: 600;
     color: white;
     margin-bottom: 1.5rem;
   }
@@ -154,7 +155,6 @@
 
   .outStandingSliderWrapper {
     position: relative;
-    
     padding: 0 2rem;
   
     .outStandingSlider {
@@ -169,10 +169,10 @@
       top: 40%;
       transform: translateY(-50%);
       width: 3rem;
-      height: 4rem;
+      height: 3rem;
       
       font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: var(--bgc-arrowBtn);
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -188,11 +188,11 @@
       }
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: var(--bgc-arrowBtn-hover);
       }
   
       &.left {
-        left: -3px;
+        left: 0;
       }
   
       &.right {
