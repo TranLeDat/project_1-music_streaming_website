@@ -36,7 +36,7 @@ function Content({ content, contents }) {
                         <i className="fa-solid fa-plus"></i>
                     </button>
                     <button className={clsx(styles.actionBtn, styles.actionHeart)}>
-                        <i className="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-heart"></i>
                     </button>
                     <button onClick={handlePlay} className={clsx(styles.playBtn)}>
                         <i className="fa-solid fa-circle-play"></i>
