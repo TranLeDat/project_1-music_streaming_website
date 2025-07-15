@@ -1,11 +1,15 @@
 :root {
   --color-start: #069ad6;
   --color-end: #9747ff;
-  
+  --color-actionBtn: #b3b3b3;
+  --color-actionBtn-hover: #fff;
+  --color-actionHeart-hover: #ff0000;
+  --color-actionPlay: #1a1a1a;
+  --color-actionPlay-hover: #5a32a3;
 
 
-  --bg-left:#241b31;
-  --bg-right:rgba(32, 19, 53, 0.9);
+  --bg-left:#1e142c;
+  --bg-right:#0f0120;
 
   // playbox
   --bg-playbox:#1a1424;
@@ -14,4 +18,5 @@
 
   --bg-header-previous: #706e6e;
   --bg-header-previous-hover: #ffffff;
+
 }
