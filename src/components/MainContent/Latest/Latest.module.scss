@@ -1,48 +1,45 @@
-:root{
-    --color-start:#069ad6 ;
-    --color-end: #9747ff;
-}   
 .item{
     cursor: pointer;
     box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease, box-shadow 0.3s ease;
-    height: 300px;
+    height: 40rem;
+    margin-left: 1.6rem;
     display: flex;
-    padding-top: 30px;
+    padding-top: 3rem;
     flex-direction: column;
+    gap: 1rem;
     
+
     &:hover{
-        transform: scale(1.05);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05); 
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
         
     }
     .coverWrapper{
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
-        width: 181px;
-        height: 181px;
-        padding: 1px;
+        border-radius: 1rem;
+        width: 25rem;
+        height: 25rem;
+        padding: 2px;
         background: linear-gradient(90deg,var(--color-start), var(--color-end));
         .cover{
-            width: 180px;
-            height: 180px;
-            border-radius: 10px;
+            width: 25rem;
+            height: 25rem;
+            border-radius: 1rem;
             padding-bottom: 0;
             object-fit: cover;
-            
-            // border: 2px solid var(--color-end)
         }
     }
        
     .title{
-        font-size: 18px;
+        font-size: 2rem ;
         font-weight: 800;
-        width: 201px;
+        width: 20.1rem;
         color: white;
-        margin: 0 5px 10px 0;
+        margin: 0 0.5rem 1rem 0;
         display: flex;
         flex-wrap: wrap;
         
@@ -55,7 +52,7 @@
     }
     .artist{
         margin: 0;
-        font-size: 12px;
+        font-size: 1.4rem;
         font-weight: 600;
         color: white;
 

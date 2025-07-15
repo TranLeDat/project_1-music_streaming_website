@@ -15,7 +15,7 @@
 
       img {
         width: 100%;
-        height: 300px; 
+        height: 30rem; 
         object-fit: cover;
         display: block;
       }
@@ -26,7 +26,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 80px;
+        height: 8rem;
         background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
         pointer-events: none;
       }
@@ -39,7 +39,7 @@
 
     .slick-dots {
       position: absolute;
-      bottom: 30px !important; // Tăng khoảng cách từ đáy
+      bottom: 3rem !important; // Tăng khoảng cách từ đáy
       left: 50%;
       transform: translateX(-50%);
       z-index: 100 !important; // Đảm bảo hiển thị trên cùng
@@ -50,13 +50,13 @@
       margin: 0;
                     
       li {
-        margin: 0 5px;
+        margin: 0 0.5rem;
         width: auto;
         height: auto;
                    
         button {
-          width: 5px;
-          height: 5px;
+          width: 0.5rem;
+          height: 0.5rem;
           padding: 0;
           border-radius: 50%;
           background: rgba(255,255,255,0.5);
@@ -71,8 +71,8 @@
                       
         &.slick-active button {
           background: #1db954 !important;
-          width: 12px;
-          height: 12px;
+          width: 1.2rem;
+          height: 1.2rem;
         }
       }
     }
@@ -80,13 +80,14 @@
 }
 
 .latests {
-  margin-top: 40px;
-  padding: 0 10px;
+  margin-top: 5rem;
+  padding: 0 1rem;
 
   .latestTitle {
-    font-size: 28px;
+    font-size: 4.2rem;
+    font-weight: 600;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
   }
   
   .slick-list {
@@ -96,25 +97,20 @@
   .latestSliderWrapper {
     position: relative;
     overflow: visible;
-    padding: 0 30px;
+    padding: 0 3rem;
   
     .latestSlider {
-        padding: 0 10px;
-        margin-left: 25px;
-        box-sizing: border-box;
-        
-
+      padding: 0 1rem;
+      box-sizing: border-box;
     }
   
     .arrowBtn {
       position: absolute;
       top: 40%;
       transform: translateY(-50%);
-      width: 30px;
-      height: 40px;
-      
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.2);
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--bgc-arrowBtn);
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -126,7 +122,7 @@
       
       i{
         color: white;
-        font-size: 20px;
+        font-size: 2rem;
       }
 
       &:hover {
@@ -134,7 +130,7 @@
       }
   
       &.left {
-        left:3px;
+        left:0 ;
       }
   
       &.right {
@@ -146,25 +142,25 @@
   
 }
 .outStandings {
-  margin-top: 60px;
-  padding: 0 20px;
+  margin-top: 6rem;
+  padding: 0 2rem;
 
   .outStandingTitle {
-    font-size: 28px;
+    font-size: 2.8rem;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
   }
   
 
   .outStandingSliderWrapper {
     position: relative;
     
-    padding: 0 20px;
+    padding: 0 2rem;
   
     .outStandingSlider {
-        padding: 0 10px;
+        padding: 0 1rem;
         margin-left: 0;
-        height: 300px;
+        height: 30rem;
 
     }
   
@@ -172,8 +168,8 @@
       position: absolute;
       top: 40%;
       transform: translateY(-50%);
-      width: 30px;
-      height: 40px;
+      width: 3rem;
+      height: 4rem;
       
       font-weight: bold;
       background-color: rgba(255, 255, 255, 0.2);
@@ -188,7 +184,7 @@
       
       i{
         color: white;
-        font-size: 20px;
+        font-size: 2rem;
       }
 
       &:hover {
