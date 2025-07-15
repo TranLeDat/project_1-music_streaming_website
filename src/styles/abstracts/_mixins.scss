@@ -1,0 +1,37 @@
+// _responsive.scss
+
+// Responsive for small desktop: max-width 1440px
+@mixin desktopS {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+// Responsive for large tablet: max-width 1220px
+@mixin tabletL {
+  @media (max-width: 1220px) {
+    @content;
+  }
+}
+
+// Responsive for tablet: max-width 1024px
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Responsive for large mobile devices: max-width 768px
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// Responsive for extra small mobile devices: max-width 480px
+@mixin mobileS {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
