@@ -1,27 +1,26 @@
 form{
-
     position: relative;
     display: inline-block;
-    
-    height: 50px;
-    gap: 20px;
+    height: 5rem;
+    gap: 2rem;
 
     .btn{
         position: absolute;
-        top: 20px;
-        left: 190px;
-        padding: 10px;
-        margin-left: 10px;
+        top: 2rem;
+        left: 19rem;
+        padding: 1rem;
+        margin-left: 1rem;
         cursor: pointer;
-        background: rgba(255, 255, 255, 0.0);
+        background: var(--bg-controlBtn);
+        border: 0px solid var(--border-controlBtn);
 
         i{
             
-            font-size: 24px;
+            font-size: 1.8rem;
             color: white;
             opacity: 0;
             z-index: 10;
-            
+
         }
     }
 }

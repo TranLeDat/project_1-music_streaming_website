@@ -43,7 +43,7 @@ function SearchForm(props) {
           <InputField name='search' label={label} form={form}  />
         </div>
         <button type="submit" className={clsx(styles.btn)}>
-            <i  className="fa-solid fa-magnifying-glass" ></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
     </>

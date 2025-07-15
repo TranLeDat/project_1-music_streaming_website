@@ -27,6 +27,7 @@ function InputField({ form, name, label, disable }) {
           <TextField
             {...field}
             fullWidth
+            fontSize="2.4rem"
             variant="outlined"
             margin="normal"
             label={label}
@@ -37,24 +38,32 @@ function InputField({ form, name, label, disable }) {
               endAdornment: ( 
                 <InputAdornment position="end">
                   <IconButton edge="end">
-                    <SearchIcon sx={{ color: 'white' }} />
+                    <SearchIcon sx={{ color: 'white', fontSize: '28px' }} />
                   </IconButton>
                 </InputAdornment>
               ),
               sx: {
                 color: 'white',
+                fontSize: '1.6rem',
+              },
+            }}
+             FormHelperTextProps={{
+              sx: {
+                fontSize: '1.2rem',
+                color: 'red',
               },
             }}
             InputLabelProps={{
               sx: {
                 color: 'white',
+                fontSize: '1.6rem',
                 '&.Mui-focused': {
                   color: 'white',
                 },
               },
             }}
             sx={{
-              width: '250px',
+              width: '400px',
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
                   borderColor: 'white',
