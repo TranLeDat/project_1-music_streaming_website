@@ -1,11 +1,10 @@
-:root{
-    --color-start : #069AD6;
-    --color-end : #9747FF;
-}
 .formCreate{
     color:  #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     .title{
-        font-size: 28px;
+        font-size: 2.8rem;
         font-weight: 700;
         color: #fff;
     }
@@ -28,13 +27,13 @@
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        width: 120px;
-                        height: 120px;
+                        width: 12rem;
+                        height: 12rem;
                         background-color: #333;
                         border: 1px solid #555;
-                        border-radius: 15px;
+                        border-radius: 1.5rem;
                         cursor: pointer;
-                        margin: 30px;
+                        margin: 3rem;
                         transition:  transform 0.3s ease;
     
                         &:hover{
@@ -43,27 +42,27 @@
     
                         .uploadIcon{
                             .img{
-                                width: 30px;
-                                height: 30px;
+                                width: 3rem;
+                                height: 3rem;
                                 
                             }
                         }
                         .uploadText{
                             color: #fff;
-                            font-size: 16px;
+                            font-size: 1.6rem;
                             text-align: center;
                             margin: 0 auto;
     
                             span {
                                 display: block;
-                                font-size: 12px;
-                                color: #bbb; // Màu xám cho chữ phụ
-                                margin-top: 5px;
+                                font-size: 1.2rem;
+                                color: #bbb;
+                                margin-top: 0.5rem;
                             }
                         }
                     }
                     .audioPreview{
-                        max-width: 100px;
+                        max-width: 10rem;
                     }
                 }
                 .frameThumbnail{
@@ -77,13 +76,13 @@
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        width: 120px;
-                        height: 120px;
+                        width: 12rem;
+                        height: 12rem;
                         background-color: #333;
                         border: 1px solid #555;
-                        border-radius: 15px;
+                        border-radius: 1.5rem;
                         cursor: pointer;
-                        margin: 30px;
+                        margin: 3rem;
                         transition:  transform 0.3s ease;
     
                         &:hover{
@@ -92,47 +91,47 @@
     
                         .uploadIcon{
                             .img{
-                                width: 30px;
-                                height: 30px;
+                                width: 3rem;
+                                height: 3rem;
                                 
                             }
                         }
                         .uploadText{
                             color: #fff;
-                            font-size: 16px;
+                            font-size: 1.6rem;
                             text-align: center;
                             margin: 0 auto;
     
                             span {
                                 display: block;
-                                font-size: 12px;
-                                color: #bbb; // Màu xám cho chữ phụ
-                                margin-top: 5px;
+                                font-size: 1.2rem;
+                                color: #bbb; 
+                                margin-top: 0.5rem;
                             }
                         }
                     }
                     .thumbnailPreview{
-                        max-width: 120px;
-                        width: 120px;
-                        height: 120px; 
+                        max-width: 12rem;
+                        width: 12rem;
+                        height: 12rem; 
                         
                     }
                 }
                 
                 .info{
-                    margin: 30px;
-                    font-size: 16px;
+                    margin: 3rem;
+                    font-size: 1.6rem;
                 }
                 .radioItem{
                     display: flex;
                     align-items: center;
                     .rdr{
-                        margin: 30px;
-                        width: 15px;
-                        height: 15px;
+                        margin: 3rem;
+                        width: 1.5rem;
+                        height: 1.5rem;
                     }
                     span{
-                        font-size: 14px;
+                        font-size: 1.4rem;
                     }
                 }
                 
@@ -141,66 +140,70 @@
             .content_right{
                 
                 label{
-                    font-size: 18px;
-                    margin: 20px;
+                    font-size: 1.8rem;
+                    margin: 1rem 2rem;
                     font-weight: 600;
                 }
                 .inputName{
                     width: 100%;;
-                    font-size: 16px;
-                    height: 30px;
-                    margin-bottom: 50px;
-                    border-radius: 5px;
+                    font-size: 1.6rem;
+                    height: 3rem;
+                    margin-bottom: 5rem;
+                    margin-top: 1rem;
+                    border-radius: 0.5rem;
                     background: #424141;
                     color: #fff;
                 }
                 .music{
                     width: 95%;
                     display: flex;
-                    gap: 40px;
-                    margin-bottom: 50px;
+                    gap: 4rem;
+                    margin-bottom: 5rem;
                     .inputArtist{
-                        font-size: 18px;
+                        font-size: 1.8rem;
                         width: 22vw;
-                        height: 30px;
-                        border-radius: 5px;
+                        height: 3rem;
+                        margin-top: 1rem;
+                        border-radius: 0.5rem;
                         background: #424141;
                         color: #fff;
                     }  
                     .inputMusician{
-                        font-size: 18px;
+                        font-size: 1.8rem;
                         width: 22vw;
-                        height: 30px;
-                        border-radius: 5px;
+                        height: 3rem;
+                        margin-top: 1rem;
+                        border-radius: 0.5rem;
                         background: #424141;
                         color: #fff;
                     } 
                 }
                 .desc{
-                    font-size: 18px;
-                    height: 100px;
+                    font-size: 1.8rem;
+                    height: 10rem;
                     width: 100%;
-                    margin-bottom: 50px;
-                    border-radius: 15px;
+                    margin-top: 1rem;
+                    margin-bottom: 5rem;
+                    border-radius: 1.5rem;
                     background: #424141;
                     color: #fff;
                 }
                 .button{
                     display: flex;
                     justify-content: center;
-                    gap: 50px;
+                    gap: 5rem;
                     .btn{
-                        height: 50px;
-                        width: 200px;
+                        height: 5rem;
+                        width: 20rem;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 24px;
+                        font-size: 2.4rem;
                         box-sizing: border-box;
-                        border-radius: 15px;
+                        border-radius: 1.5rem;
                         transition: transform 0.5s ease, box-shadow 0.3s ease;
                         &:hover{
-                            box-shadow: 0 0 15px #e6dbdb;
+                            box-shadow: 0 0 1.5rem #e6dbdb;
                             transform: scale(1.05);
                         }
                     }
@@ -211,7 +214,7 @@
 
                     }
                     .btnAdd{
-                        background: linear-gradient(to bottom, #069AD6, #9747FF);
+                        background: linear-gradient(to bottom, var(--color-start), var(--color-end));
                     }
                 }
                 

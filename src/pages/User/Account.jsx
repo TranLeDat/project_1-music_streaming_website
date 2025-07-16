@@ -46,7 +46,7 @@ function Account() {
                     <Box sx={{ height: 520, boxSizing: 'border-box' }}>
                       <Register />
                       <Box textAlign='center' sx={{ position: 'absolute', bottom: '0px' }}>
-                        <Button color="primary" onClick={() => setMode(MODE.LOGIN)}>
+                        <Button color="primary" sx={{ fontSize: '12px' }} onClick={() => setMode(MODE.LOGIN)}>
                           Already have an account? Login here
                         </Button>
                       </Box>
@@ -56,7 +56,7 @@ function Account() {
                     <Box sx={{ height: 350, boxSizing: 'border-box' }}>
                       <Login onClose={handleClose} />
                       <Box textAlign='center' sx={{ position: 'absolute', bottom: '0px' }}>
-                        <Button color="primary" onClick={() => setMode(MODE.REGISTER)}>
+                        <Button color="primary" sx={{ fontSize: '12px' }}  onClick={() => setMode(MODE.REGISTER)}>
                           Don't have an account? Register here
                         </Button>
                       </Box>

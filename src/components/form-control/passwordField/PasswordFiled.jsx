@@ -33,8 +33,16 @@ function PasswordField({ form, name, label, disabled }) {
   };
 
   return (
-    <FormControl fullWidth margin="normal" variant="outlined" error={hasError}>
-      <InputLabel htmlFor={name}>{label}</InputLabel>
+    <FormControl
+      fullWidth
+      margin="normal"
+      variant="outlined"
+      error={hasError}
+    >
+      <InputLabel htmlFor={name} sx={{ fontSize: '16px' }}>
+        {label}
+      </InputLabel>
+
       <Controller
         name={name}
         control={control}
@@ -44,9 +52,10 @@ function PasswordField({ form, name, label, disabled }) {
             id={name}
             type={showPassword ? 'text' : 'password'}
             margin="dense"
-            size='small'
+            size="small"
             label={label}
             disabled={disabled}
+            sx={{ fontSize: '16px' }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -61,7 +70,10 @@ function PasswordField({ form, name, label, disabled }) {
           />
         )}
       />
-      <FormHelperText>{errors[name]?.message}</FormHelperText>
+
+      <FormHelperText sx={{ fontSize: '12px' }}>
+        {errors[name]?.message}
+      </FormHelperText>
     </FormControl>
   );
 }

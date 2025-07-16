@@ -51,7 +51,7 @@ function LoginForm(props){
                 <Avatar sx={{m: '0 auto', backgroundColor: 'secondary.main'}}>
                     <LockOutlined ></LockOutlined>  
                 </Avatar>
-                <Typography sx={{textAlign:'center', mb: 3 ,fontSize: '16px',}} component="h3" variant='h5'>
+                <Typography sx={{textAlign:'center', mb: 3 ,fontSize: '24px',}} component="h3" variant='h5'>
                     Login
                 </Typography>
 
