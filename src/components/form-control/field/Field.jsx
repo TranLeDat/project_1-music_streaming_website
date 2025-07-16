@@ -33,7 +33,15 @@ function Field({ form, name, label, disable }) {
             disabled={disable}
             error={!!hasError}
             helperText={errors[name]?.message}
-            
+            InputProps={{
+              sx: { fontSize: '16px' } // Tăng kích thước chữ nhập vào
+            }}
+            InputLabelProps={{
+              sx: { fontSize: '16px' } // Tăng kích thước chữ nhãn (label)
+            }}
+             FormHelperTextProps={{
+              sx: { fontSize: '12px', color: 'red' } // Font size và màu cho validate message
+            }}
           />
         )}
       />

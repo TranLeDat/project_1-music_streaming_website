@@ -1,62 +1,60 @@
 .songlist{
     display: flex;
-    gap: 10px;
+    gap: 1rem;
     align-items: center;
     color: #fff;
 
     
     .icon{
-        width: 18px;
-        height: 18px;
+        width: 1.8rem;
+        height: 1.8rem;
     }
     .video{
-        width: 300px;
+        width: 30rem;
         cursor: pointer;
     }
     .status{
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        // margin-left: 40px;
-        width: 140px;
+        width: 14rem;
         opacity: 0.5;
     }
     .date{
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        // margin-left: 50px;
-        width: 150px;
+        width: 15rem;
         opacity: 0.5;
     }
     .views{
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        margin-left: 30px;
-        width: 60px;
+        margin-left: 3rem;
+        width: 6rem;
         opacity: 0.5;
     }
     .comments{
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        margin-left: 50px;
-        width: 50px;
+        margin-left: 5rem;
+        width: 5rem;
         opacity: 0.5;
     }
     .time{
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        margin-left: 150px;
+        margin-left: 10rem;
         opacity: 0.5;
     }
     .remove{
-        font-size: 14px;
-        margin-left: 50px;
+        font-size: 1.4rem;
+        margin-left: 8rem;
         transition: box-shadow 0.3s ease, transform 0.5s ease;
         cursor: pointer;
         opacity: 0.5;
 
         &:hover{
             transform: scale(1.05);
-            box-shadow: 0 0 15px #716f6f;
+            box-shadow: 0 0 1.5rem #716f6f;
             opacity: 1;
         }
     }
@@ -67,5 +65,5 @@
     height: 1px;
     width: 100%;
     background: #333;
-    margin: 20px 0 40px 0;
+    margin: 2rem 0 4rem 0;
 }
