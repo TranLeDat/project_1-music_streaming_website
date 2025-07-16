@@ -1,5 +1,5 @@
 import styles from './PlayBox.module.scss';
-import bgc from '../../assets/img/login/image-cache.jpg'
+import bgc from '../../assets/img/login/image-cache.jpg';
 import clsx from 'clsx';
 import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -16,6 +16,8 @@ function PlayBox() {
   const [isPlaying, setPlaying] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
   const [isRepeated, setIsRepeated] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const [currentIndex, setCurrentIndex] = useState(() => {
     if (!currentSong || !playlist.length) return 0;
@@ -32,14 +34,26 @@ function PlayBox() {
 
   useEffect(() => {
     const audio = audioRef.current;
+
     const updateProgress = () => {
       if (!isDragging && audio.duration) {
         const progressPercent = (audio.currentTime / audio.duration) * 100;
         setProgress(progressPercent);
+        setCurrentTime(audio.currentTime);
       }
     };
+
+    const handleLoadedMetadata = () => {
+      setDuration(audio.duration);
+    };
+
     audio.addEventListener('timeupdate', updateProgress);
-    return () => audio.removeEventListener('timeupdate', updateProgress);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+
+    return () => {
+      audio.removeEventListener('timeupdate', updateProgress);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    };
   }, [isDragging]);
 
   useEffect(() => {
@@ -121,6 +135,12 @@ function PlayBox() {
   const handleShuffle = () => setIsShuffled(!isShuffled);
   const handleRepeat = () => setIsRepeated(!isRepeated);
 
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
   const song = playlist[currentIndex] || {};
 
   return (
@@ -158,7 +178,12 @@ function PlayBox() {
             <i className="fa-solid fa-repeat"></i>
           </button>
         </div>
+
         <div className={clsx(styles.progressBtn)}>
+          <div className={clsx(styles.timeDisplay)}>
+            <span>{formatTime(currentTime)}</span>
+            <span>{formatTime(duration)}</span>
+          </div>
           <audio ref={audioRef} src={song.src || ''} />
           <div
             className={clsx(styles.progressWrapper)}
@@ -171,7 +196,9 @@ function PlayBox() {
           </div>
         </div>
       </div>
-      <div className={clsx(styles.icon)}><i className="fa-solid fa-ellipsis-vertical"></i></div>
+      <div className={clsx(styles.icon)}>
+        <i className="fa-solid fa-ellipsis-vertical"></i>
+      </div>
     </footer>
   );
 }

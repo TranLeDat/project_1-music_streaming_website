@@ -62,7 +62,7 @@ function ClientLogin() {
             <div className={clsx(styles.post)}>
                 <h2 className={clsx(styles.sectionTitle)}>Các bài hát đã đăng tải</h2>
                 {tracks.map((item) => (
-                <Song key={item.id} item={item} items={tracks} source={source} />
+                    <Song key={item.id} item={item} items={tracks} source={source} />
                 ))}
 
                 {hasMore && (
