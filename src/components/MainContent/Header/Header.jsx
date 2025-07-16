@@ -81,7 +81,7 @@ function Header() {
           renderInput={(params) => (
             <TextField
               {...params}
-              sx={{ backgroundColor: 'white', width: '600px' }}
+              sx={{ backgroundColor: 'white', width: '40vw', '& .MuiInputBase-input': { fontSize: '16px', }, }}
               placeholder="What do you want to listen to?"
               fullWidth
               size="small"
