@@ -20,6 +20,9 @@
         width: calc(100% - 30rem);
         margin-left: 30rem;
         padding: 0 3.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
 
         .header {
             height: 5rem;
