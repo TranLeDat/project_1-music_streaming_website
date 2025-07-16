@@ -51,9 +51,9 @@ function ClientLogin() {
                 <div className={clsx(styles.content)}>
                     <h3 className={clsx(styles.userName)}>{artist?.name}</h3>
                     <ul className={clsx(styles.info)}>
-                    <li className={clsx(styles.desc)}>Số bài hát đăng tải: {artist?.nb_album}</li>
-                    <li className={clsx(styles.circle)}></li>
-                    <li className={clsx(styles.desc)}>{artist?.nb_fan?.toLocaleString()} người theo dõi</li>
+                        <li className={clsx(styles.desc)}>Số bài hát đăng tải: {artist?.nb_album}</li>
+                        <li className={clsx(styles.circle)}></li>
+                        <li className={clsx(styles.desc)}>{artist?.nb_fan?.toLocaleString()} người theo dõi</li>
                     </ul>
                 </div>
                 </div>
@@ -68,10 +68,10 @@ function ClientLogin() {
                 {hasMore && (
                 <div className={clsx(styles.loadMoreWrapper)}>
                     <button
-                    className={clsx(styles.loadMoreBtn)}
-                    onClick={handleLoadMore}
-                    >
-                    Xem thêm
+                        className={clsx(styles.loadMoreBtn)}
+                        onClick={handleLoadMore}
+                        >
+                        Xem thêm
                     </button>
                 </div>
                 )}
