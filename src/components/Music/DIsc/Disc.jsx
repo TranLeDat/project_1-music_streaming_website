@@ -173,10 +173,10 @@ function Disc() {
           <div className={clsx(styles.infos)}>
             <div className={clsx(styles.info)}>
               <div className={clsx(styles.title)}>
-                <h3>{currentSong.title}</h3>
-                <p>{currentSong.artist}</p>
+                <h3 className={clsx(styles.name)}>{currentSong.title}</h3>
+                <p className={clsx(styles.desc)}>{currentSong.artist}</p>
               </div>
-              <i className="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-heart"></i>
             </div>
             <div className={clsx(styles.controls)}>
               {currentSong.src && <audio ref={audioRef} src={currentSong.src} />}
@@ -220,7 +220,7 @@ function Disc() {
           </div>
         </div>
         <div className={clsx(styles.lyrics)}>
-          <pre>{currentSong.lyrics?.join('\n') || 'No lyrics available'}</pre>
+          <pre >{currentSong.lyrics?.join('\n') || 'No lyrics available'}</pre>
         </div>
       </div>
     </div>
