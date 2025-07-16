@@ -1,38 +1,35 @@
-:root {
-    --color-fill: #019AD6;
-    --color-empty: #9747FF;
-  }
-  
-  .container {
 
-    height: 100vh;
+  .container {
+    height: 80vh;
     margin: 0;
     padding: 30px;
     background: #000;
-  
-  
+
     .content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 2rem;
+      height: 100%;
   
       .song {
         width: 100%;
-        padding: 10px 20px;
+        height: 100%;
+        padding: 1rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
   
         .discWrapper {
           position: relative;
         }
   
         .disc {
-          height: 200px;
-          width: 200px;
+          height: 25rem;
+          width: 25rem;
           border-radius: 50%;
           border: 2px solid white;
-          padding: 20px;
+          padding: 2rem;
           position: relative;
           display: flex;
           align-items: center;
@@ -61,18 +58,18 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 12px;
+          font-size: 1.4rem;
           font-weight: bold;
           color: #ffca28;
           text-transform: uppercase;
           pointer-events: none;
           text-align: center;
-          line-height: 1.2;
-          padding: 20px;
+          line-height: 1.2rem;
+          padding: 2rem;
         }
   
         .infos {
-          margin-top: 50px;
+          margin-top: 5rem;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -83,19 +80,23 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 400px;
+            max-width: 40rem;
   
             .title { 
               color: white;
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
               .name {
-                font-size: 24px;
+                font-size: 2.4rem;
+                width: 100%;
                 font-weight: 700;
                 margin: 0;
                 color: white;
               }
   
               .desc {
-                font-size: 16px;
+                font-size: 1.6rem;
                 font-weight: 600;
                 opacity: 0.7;
                 margin: 0;
@@ -104,7 +105,7 @@
             }
   
             i {
-              font-size: 14px;
+              font-size: 2rem;
               color: white;
               cursor: pointer;
   
@@ -115,9 +116,9 @@
           }
   
           .controls {
-            margin-top: 20px;
+            margin-top: 4rem;
             width: 100%;
-            max-width: 400px;
+            max-width: 40rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -126,27 +127,27 @@
               display: flex;
               align-items: center;
               width: 100%;
-              gap: 10px;
+              gap: 1rem;
   
               .current,
               .totalTime {
-                font-size: 12px;
+                font-size: 1.2rem;
                 color: white;
               }
               
               .progressTrack {
                 position: relative;
                 flex: 1;
-                height: 5px;
+                height: 0.5rem;
                 background: #444;
-                border-radius: 5px;
+                border-radius: 0.5rem;
                 cursor: pointer;
   
                 .progress {
                   position: relative;
                   height: 100%;
                   background: linear-gradient(to right, var(--color-fill), var(--color-empty));
-                  border-radius: 5px;
+                  border-radius: 0.5rem;
                   transition: width 0.3s ease;
   
                   &:hover {
@@ -155,11 +156,11 @@
   
                   .progressThumb {
                     position: absolute;
-                    width: 10px;
-                    height: 10px;
+                    width: 1rem;
+                    height: 1rem;
                     background-color: white;
                     border-radius: 50%;
-                    right: -10px;
+                    right: -1rem;
                     top: 50%;
                     transform: translateY(-50%);
   
@@ -173,10 +174,10 @@
             }
   
             .control {
-              margin-top: 20px;
+              margin-top: 3rem;
               display: flex;
               align-items: center;
-              gap: 10px;
+              gap: 2.4rem;
   
               .btn {
                 background-color: transparent;
@@ -184,36 +185,36 @@
                 cursor: pointer;
   
                 i {
-                  font-size: 28px;
+                  font-size: 3.6rem;
                   color: white;
                   background-color: transparent;
                 }
               }
   
               .btnShuffle {
-                margin-right: 30px;
+                margin-right: 3rem;
               }
   
               .btnback {
-                margin-right: 10px;
+                margin-right: 1rem;
               }
   
               .playBtn {
-                margin: 0 10px;
+                margin: 0 1rem;
               }
   
               .btnnext {
-                margin-left: 10px;
+                margin-left: 1rem;
               }
   
               .btnRepeat {
-                margin-left: 30px;
+                margin-left: 3rem;
               }
   
               .active {
                 border: 1px solid white;
                 border-radius: 50%;
-                padding: 5px;
+                padding: 0.5rem;
               }
             }
           }
@@ -221,19 +222,19 @@
       }
   
       .lyrics {
-        padding: 20px;
+        padding: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
   
         .lyric {
-          font-size: 20px;
+          font-size: 2.4rem;
           color: white;
           white-space: pre-line;
           background: rgba(255, 255, 255, 0.1);
-          padding: 20px;
+          padding: 2rem;
           border: 2px solid #019AD6;
-          border-radius: 10px;
+          border-radius: 1rem;
           line-height: 1.5;
         }
       }

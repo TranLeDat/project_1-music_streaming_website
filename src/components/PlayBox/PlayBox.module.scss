@@ -1,63 +1,24 @@
 
 .playbox{
-    height: 22vh;
+    height: 10rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
+    padding: 0 3.6rem;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--bg-playbox);
-    .progressWrapper{
-        position: relative;
-        height: 0.2rem;
-        background-color:#444;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        margin-bottom: 0.5rem;
-        
-        .progress{
-            position: relative;
-            height: 100%;
-            background: linear-gradient(to right,var(--color-fill), var(--color-empty));
-            border-radius: 0.5rem;
-            
-            
-            &:hover{
-                border: 0.1px solid white;
-            }
-
-            .progressThumb{
-                position: absolute;
-                width: 1rem;
-                height: 1rem;
-                background-color: white;
-                border-radius: 50%;
-                right: -0.6rem;
-                top: 50%;
-                transition: transform 0.75s ease;
-                transform: translateY(-50%);
-                
-                &:hover{
-                    background: var(--color-fill);
-                    border: 3px solid white;
-                    
-                }
-            }
-        }
-
-
-    }
+    
     .infos{
         display: flex;
         padding: 0px 1rem;
         align-items: center;
         color: white;
         position: relative;
-
         .albumArt{
-            height: 4rem;
-            width: 4rem;
+            height: 5rem;
+            width: 5rem;
             margin-right: 1.8rem;
             border-radius: 50%;
-            
+               
         }
         .details{
             margin: 0;
@@ -65,35 +26,77 @@
             flex-direction: column;
             gap: 0.8rem;
             .title{
-                font-size: 1.6rem;
+                font-size: 2.4rem;
             }
             .artist{
-                font-size: 1.4rem;
+                font-size: 1.8rem;
                 opacity: 0.7;
             }
         }
-        .icon{
-            position: absolute;
-            right: 1.5rem;
-            top: 40%;
-            font-size: 1.6rem;
-            cursor: pointer;
-            opacity: 0.7;
-        }
     }
-    .controls{
-        margin-top: 1.5rem;
+    .content{ 
+        width: 30vw;
         display: flex;
-        justify-content: center;
-        gap: 2.5rem;
-        .controlBtn{
-            background: var(--bg-controlBtn);
-            border: 0px solid var(--border-controlBtn);
-            color: white;
-            cursor: pointer;
-            font-size: 3.4rem;
-            padding: 0;
-            transition: 0.5s;
+        flex-direction: column;
+        gap: 2rem;
+        .controls{
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            .controlBtn{
+                background: var(--bg-controlBtn);
+                border: 0px solid var(--border-controlBtn);
+                color: white;
+                cursor: pointer;
+                font-size: 4rem;
+                padding: 0;
+                transition: 0.5s;
+            }
+        }
+        .progressBtn{
+            .progressWrapper{
+                position: relative;
+                height: 0.2rem;
+                background-color:#444;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                margin-bottom: 0.5rem;
+                
+                .progress{
+                    position: relative;
+                    height: 100%;
+                    background: linear-gradient(to right,var(--color-fill), var(--color-empty));
+                    border-radius: 0.5rem;
+                    
+                    
+                    &:hover{
+                        border: 0.1px solid white;
+                    }
+
+                    .progressThumb{
+                        position: absolute;
+                        width: 1rem;
+                        height: 1rem;
+                        background-color: white;
+                        border-radius: 50%;
+                        right: -0.6rem;
+                        top: 50%;
+                        transition: transform 0.75s ease;
+                        transform: translateY(-50%);
+                        
+                        &:hover{
+                            background: var(--color-fill);
+                            border: 3px solid white; 
+                        }
+                    }
+                }
+            }
         }
     }
+    .icon{
+        font-size: 2.4rem;
+        cursor: pointer;
+        opacity: 0.7;
+        color: #fff;
+    }  
 }

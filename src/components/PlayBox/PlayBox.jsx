@@ -125,16 +125,6 @@ function PlayBox() {
 
   return (
     <footer className={clsx(styles.playbox)}>
-      <audio ref={audioRef} src={song.src || ''} />
-      <div
-        className={clsx(styles.progressWrapper)}
-        onMouseDown={handleMouseDown}
-        ref={progressRef}
-      >
-        <div className={clsx(styles.progress)} style={{ width: `${progress}%` }}>
-          <div className={clsx(styles.progressThumb)}></div>
-        </div>
-      </div>
       <div className={clsx(styles.infos)}>
         <img
           src={song.img || song.albumArt || bgc}
@@ -145,29 +135,43 @@ function PlayBox() {
           <h3 className={clsx(styles.title)}>{song.title || 'Tên bài hát'}</h3>
           <p className={clsx(styles.artist)}>{song.artist || 'Tên ca sĩ'}</p>
         </div>
-        <div className={clsx(styles.icon)}><i className="fa-solid fa-ellipsis-vertical"></i></div>
       </div>
-      <div className={clsx(styles.controls)}>
-        <button className={clsx(styles.controlBtn, { [styles.active]: isShuffled })} onClick={handleShuffle}>
-          <i className="fa-solid fa-shuffle"></i>
-        </button>
-        <button className={clsx(styles.controlBtn)} onClick={handlePrev}>
-          <i className="fa-solid fa-backward"></i>
-        </button>
-        <button className={clsx(styles.controlBtn, styles.playBtn)} onClick={handlePlayPause}>
-          {isPlaying ? (
-            <i className="fa-regular fa-circle-pause"></i>
-          ) : (
-            <i className="fa-regular fa-circle-play"></i>
-          )}
-        </button>
-        <button className={clsx(styles.controlBtn)} onClick={handleNext}>
-          <i className="fa-solid fa-forward"></i>
-        </button>
-        <button className={clsx(styles.controlBtn, { [styles.active]: isRepeated })} onClick={handleRepeat}>
-          <i className="fa-solid fa-repeat"></i>
-        </button>
+      <div className={clsx(styles.content)}>
+        <div className={clsx(styles.controls)}>
+          <button className={clsx(styles.controlBtn, { [styles.active]: isShuffled })} onClick={handleShuffle}>
+            <i className="fa-solid fa-shuffle"></i>
+          </button>
+          <button className={clsx(styles.controlBtn)} onClick={handlePrev}>
+            <i className="fa-solid fa-backward"></i>
+          </button>
+          <button className={clsx(styles.controlBtn, styles.playBtn)} onClick={handlePlayPause}>
+            {isPlaying ? (
+              <i className="fa-regular fa-circle-pause"></i>
+            ) : (
+              <i className="fa-regular fa-circle-play"></i>
+            )}
+          </button>
+          <button className={clsx(styles.controlBtn)} onClick={handleNext}>
+            <i className="fa-solid fa-forward"></i>
+          </button>
+          <button className={clsx(styles.controlBtn, { [styles.active]: isRepeated })} onClick={handleRepeat}>
+            <i className="fa-solid fa-repeat"></i>
+          </button>
+        </div>
+        <div className={clsx(styles.progressBtn)}>
+          <audio ref={audioRef} src={song.src || ''} />
+          <div
+            className={clsx(styles.progressWrapper)}
+            onMouseDown={handleMouseDown}
+            ref={progressRef}
+          >
+            <div className={clsx(styles.progress)} style={{ width: `${progress}%` }}>
+              <div className={clsx(styles.progressThumb)}></div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div className={clsx(styles.icon)}><i className="fa-solid fa-ellipsis-vertical"></i></div>
     </footer>
   );
 }

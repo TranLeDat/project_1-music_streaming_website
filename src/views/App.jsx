@@ -24,9 +24,6 @@ function App() {
             <div className={clsx(styles.sidebar)}>
                 <Sidebar />
             </div>
-            <div className={clsx(styles.playbox)}>
-                <PlayBox />
-            </div>
         </div>
         <div className={clsx(styles.right)}>
             <div className={clsx(styles.header)}>
@@ -49,6 +46,11 @@ function App() {
                     <Route path="/disc" element={<Disc />} />
                     <Route path="/client" element={<ClientLogin />} />
                 </Routes>
+            </div>
+        </div>
+        <div className={clsx(styles.below)}>
+            <div className={clsx(styles.playbox)}>
+                <PlayBox />
             </div>
         </div>
     </div>
